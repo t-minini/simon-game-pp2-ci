@@ -1,0 +1,14 @@
+{
+  "name": "simon-game-project",
+  "version": "1.0.0",
+  "description": "Project Portfolio Two for Code Institute Diploma in Full Stack Software Development",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded assets/scss:assets/css"
+  },
+  "author": "Tulio Minini",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}
