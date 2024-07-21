@@ -14,7 +14,7 @@ let greenBtn = document.getElementById('green-btn');
 let redBtn = document.getElementById('red-btn');
 let yellowBtn = document.getElementById('yellow-btn');
 let blueBtn = document.getElementById('blue-btn');
-let backBtn = document.getElementById('back-btn');
+let homeBtn = document.getElementById('home-btn');
 let startBtn = document.getElementById('start-btn');
 let resetBtn = document.getElementById('reset-btn');
 
@@ -46,6 +46,19 @@ function gameScreenVisible() {
   resetBtn.classList.add('hide');
 }
 
+function gameOver() {
+  homeWrapper.classList.add('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.remove('hide');
+  resetBtn.classList.add('hide');
+}
+
+function backHomeBtn() {
+  homeWrapper.classList.remove('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.add('hide');
+}
+
 // EVENT LISTENERS
 // show home screen on page load
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -60,4 +73,9 @@ rulesBtn.addEventListener('click', () => {
 // go to game
 playBtn.addEventListener('click', () => {
   gameScreenVisible();
+});
+
+// "HOME" button
+homeBtn.addEventListener('click', () => {
+  backHomeBtn();
 });
