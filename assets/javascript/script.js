@@ -8,7 +8,7 @@ let rulesWrapper = document.getElementById('rules-wrapper');
 
 // game screen elements
 let gameWrapper = document.getElementById('game-wrapper');
-let topGameScreen = document.getElementById('top-screen-text');
+let statusScreen = document.getElementById('status-screen-text');
 let levelScreen = document.getElementById('level-screen-number');
 let greenBtn = document.getElementById('green-btn');
 let redBtn = document.getElementById('red-btn');
@@ -43,6 +43,7 @@ function gameScreenVisible() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.remove('hide');
+  resetBtn.classList.add('hide');
 }
 
 // EVENT LISTENERS

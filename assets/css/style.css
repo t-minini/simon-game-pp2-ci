@@ -27,6 +27,12 @@ body {
   color: #2f2b2f;
 }
 
+.status-screen__text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 .level-screen__text {
   font-family: "Orbitron", sans-serif;
   font-size: 1.6rem;
@@ -65,6 +71,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .game-btns {
@@ -77,6 +84,16 @@ body {
   row-gap: 1rem;
 }
 
+.heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading-primary--sub {
+  width: 70%;
+  text-align: center;
+}
+
 .level-screen {
   position: absolute;
   left: calc(50% - 2.25rem);
@@ -86,14 +103,11 @@ body {
   align-items: center;
 }
 
-.heading-primary {
+.status-screen {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-.heading-primary--sub {
-  width: 70%;
-  text-align: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .hide {
@@ -135,4 +149,17 @@ body {
 }
 .level-screen__text {
   color: #ed000b;
+}
+
+.status-screen {
+  width: 100%;
+  background: #1c0003;
+  border: 0.3rem solid #2f2b2f;
+  border-radius: 0.8rem;
+  min-height: 2.5rem;
+}
+.status-screen__text {
+  width: 100%;
+  color: #ed000b;
+  text-align: center;
 }

@@ -33,6 +33,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .game-btns {
@@ -45,15 +46,6 @@ body {
   row-gap: 1rem;
 }
 
-.level-screen {
-  position: absolute;
-  left: calc(50% - (4.5rem / 2));
-  top: calc(50% - (8.5rem / 2));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .heading-primary {
   display: flex;
   flex-direction: column;
@@ -63,4 +55,20 @@ body {
     width: 70%;
     text-align: center;
   }
+}
+
+.level-screen {
+  position: absolute;
+  left: calc(50% - (4.5rem / 2));
+  top: calc(50% - (8.5rem / 2));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }

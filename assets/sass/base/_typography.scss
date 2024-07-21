@@ -16,6 +16,14 @@
   }
 }
 
+.status-screen {
+  &__text {
+    font-family: $orbitron;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
 .level-screen {
   &__text {
     font-family: $orbitron;
