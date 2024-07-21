@@ -1,0 +1,31 @@
+@import './../settings/colors';
+
+.color-btn {
+  width: 11rem;
+  height: 11rem;
+  border: 0.6rem solid;
+
+  &--green {
+    background-color: $color-green-btn;
+    border-color: $color-green-btn-border;
+    border-radius: 0.8rem 0.8rem 5rem 0.8rem;
+  }
+
+  &--red {
+    background-color: $color-red-btn;
+    border-color: $color-red-btn-border;
+    border-radius: 0.8rem 0.8rem 0.8rem 5rem;
+  }
+
+  &--yellow {
+    background-color: $color-yellow-btn;
+    border-color: $color-yellow-btn-border;
+    border-radius: 0.8rem 5rem 0.8rem 0.8rem;
+  }
+
+  &--blue {
+    background-color: $color-blue-btn;
+    border-color: $color-blue-btn-border;
+    border-radius: 5rem 0.8rem 0.8rem 0.8rem;
+  }
+}
