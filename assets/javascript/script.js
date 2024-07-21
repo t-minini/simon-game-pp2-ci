@@ -26,14 +26,37 @@ let blueSound = new Audio('');
 let correctSound = new Audio('');
 let wrongSound = new Audio('');
 
-// functions
+// FUNCTIONS
 // show home screen only
 function homeScreenVisible() {
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.add('hide');
 }
 
-// event listeners
+function rulesScreenVisible() {
+  homeWrapper.classList.add('hide');
+  rulesWrapper.classList.remove('hide');
+  gameWrapper.classList.add('hide');
+}
+
+function gameScreenVisible() {
+  homeWrapper.classList.add('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.remove('hide');
+}
+
+// EVENT LISTENERS
+// show home screen on page load
 window.addEventListener('DOMContentLoaded', (event) => {
   homeScreenVisible();
+});
+
+// go to rules
+rulesBtn.addEventListener('click', () => {
+  rulesScreenVisible();
+});
+
+// go to game
+playBtn.addEventListener('click', () => {
+  gameScreenVisible();
 });
