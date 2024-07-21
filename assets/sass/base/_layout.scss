@@ -60,7 +60,7 @@ body {
 .level-screen {
   position: absolute;
   left: calc(50% - (4.5rem / 2));
-  top: calc(50% - (8.5rem / 2));
+  top: calc(50% - (4.5rem / 2));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +71,11 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+.bottom-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
