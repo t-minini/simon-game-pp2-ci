@@ -1,6 +1,4 @@
 // home screen elements
-// let homeHeading = document.getElementById('home-heading');
-// let homeBtns = document.getElementById('home-btns');
 let homeWrapper = document.getElementById('home-wrapper');
 let playBtn = document.getElementById('play-btn');
 let rulesBtn = document.getElementById('rules-btn');
@@ -29,18 +27,30 @@ let blueSound = new Audio('');
 let correctSound = new Audio('');
 let wrongSound = new Audio('');
 
+// game variables
+let level = 0;
+let sequence = [];
+let playerSequence = [];
+let waitingForPlayer = false;
+
 // FUNCTIONS
-// show home screen only
+// hide and show screens
 function homeScreenVisible() {
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.add('hide');
 }
 
-// go to RULES screen
 function rulesScreenVisible() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.remove('hide');
   gameWrapper.classList.add('hide');
+}
+
+function gameScreenVisible() {
+  homeWrapper.classList.add('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.remove('hide');
+  resetBtn.classList.add('hide');
 }
 
 // functionality for HOME button on RULES screen
@@ -50,17 +60,20 @@ function backHomeBtnRules() {
   gameWrapper.classList.add('hide');
 }
 
-// go to GAME screen
-function gameScreenVisible() {
-  homeWrapper.classList.add('hide');
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.remove('hide');
-  resetBtn.classList.add('hide');
+// game functions
+
+function startGame() {
+  level = 0;
+  sequence = [];
+  playerSequence = [];
+  statusScreen.textContent = 'WATCH THE SEQUENCE!';
+  levelScreen.textContent = '01';
+  resetBtn.classList.remove('hide');
+  startBtn.classList.add('hide');
+  nextLevel();
 }
 
-// functionality for START button on GAME screen
-function starGame() {
-  // code here
+function nextLevel() {
 }
 
 // functionality for RESET button on GAME screen
@@ -94,15 +107,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
   homeScreenVisible();
 });
 
-// go to rules screen
-rulesBtn.addEventListener('click', () => {
-  rulesScreenVisible();
-});
-
-// go to game screen
-playBtn.addEventListener('click', () => {
-  gameScreenVisible();
-});
+rulesBtn.addEventListener('click', rulesScreenVisible);
+playBtn.addEventListener('click', gameScreenVisible);
+startBtn.addEventListener('click', startGame);
 
 // "HOME" button at GAME screen
 gameHomeBtn.addEventListener('click', () => {
