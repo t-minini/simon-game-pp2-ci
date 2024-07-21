@@ -54,3 +54,7 @@ body {
   width: 70%;
   text-align: center;
 }
+
+.hide {
+  display: none;
+}
