@@ -27,6 +27,11 @@ body {
   color: #2f2b2f;
 }
 
+.level-screen__text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.6rem;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -43,6 +48,42 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 0.8rem;
+}
+
+.game-wrapper {
+  height: 100%;
+  padding: 2rem;
+}
+
+.game-bg {
+  width: 25rem;
+  height: 32rem;
+  border-radius: 0.8rem;
+  background: #3c3e3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-btns {
+  width: 23rem;
+  height: 23rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.level-screen {
+  position: absolute;
+  left: calc(50% - 2.25rem);
+  top: calc(50% - 4.25rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading-primary {
@@ -83,4 +124,15 @@ body {
   background-color: #3b82f6;
   border-color: #3b6ef6;
   border-radius: 5rem 0.8rem 0.8rem 0.8rem;
+}
+
+.level-screen {
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #1c0003;
+  border: 0.3rem solid #2f2b2f;
+  border-radius: 50%;
+}
+.level-screen__text {
+  color: #ed000b;
 }

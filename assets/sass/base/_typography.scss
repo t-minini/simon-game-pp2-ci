@@ -15,3 +15,10 @@
     color: $color-grey-dark;
   }
 }
+
+.level-screen {
+  &__text {
+    font-family: $orbitron;
+    font-size: 1.6rem;
+  }
+}
