@@ -4,7 +4,10 @@
 let homeWrapper = document.getElementById('home-wrapper');
 let playBtn = document.getElementById('play-btn');
 let rulesBtn = document.getElementById('rules-btn');
+
+// rules screen elements
 let rulesWrapper = document.getElementById('rules-wrapper');
+let rulesHomeBtn = document.getElementById('rules-home-btn');
 
 // game screen elements
 let gameWrapper = document.getElementById('game-wrapper');
@@ -14,7 +17,7 @@ let greenBtn = document.getElementById('green-btn');
 let redBtn = document.getElementById('red-btn');
 let yellowBtn = document.getElementById('yellow-btn');
 let blueBtn = document.getElementById('blue-btn');
-let homeBtn = document.getElementById('home-btn');
+let gameHomeBtn = document.getElementById('home-btn');
 let startBtn = document.getElementById('start-btn');
 let resetBtn = document.getElementById('reset-btn');
 
@@ -33,12 +36,21 @@ function homeScreenVisible() {
   gameWrapper.classList.add('hide');
 }
 
+// go to RULES screen
 function rulesScreenVisible() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.remove('hide');
   gameWrapper.classList.add('hide');
 }
 
+// functionality for HOME button on RULES screen
+function backHomeBtnRules() {
+  homeWrapper.classList.remove('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.add('hide');
+}
+
+// go to GAME screen
 function gameScreenVisible() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.add('hide');
@@ -46,17 +58,34 @@ function gameScreenVisible() {
   resetBtn.classList.add('hide');
 }
 
+// functionality for START button on GAME screen
+function starGame() {
+  // code here
+}
+
+// functionality for RESET button on GAME screen
+function resetGame() {
+  // code here
+}
+
+// functionality for HOME button on GAME screen
+function backHomeBtnGame() {
+  homeWrapper.classList.remove('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.add('hide');
+}
+
+// functionality for when player WINS GAME.
+function winnerGame() {
+  // code here
+}
+
+// functionality for when is GAME OVER.
 function gameOver() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.remove('hide');
   resetBtn.classList.add('hide');
-}
-
-function backHomeBtn() {
-  homeWrapper.classList.remove('hide');
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.add('hide');
 }
 
 // EVENT LISTENERS
@@ -65,17 +94,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
   homeScreenVisible();
 });
 
-// go to rules
+// go to rules screen
 rulesBtn.addEventListener('click', () => {
   rulesScreenVisible();
 });
 
-// go to game
+// go to game screen
 playBtn.addEventListener('click', () => {
   gameScreenVisible();
 });
 
-// "HOME" button
-homeBtn.addEventListener('click', () => {
-  backHomeBtn();
+// "HOME" button at GAME screen
+gameHomeBtn.addEventListener('click', () => {
+  backHomeBtnGame();
+});
+
+// "HOME" button at RULES screen
+rulesHomeBtn.addEventListener('click', () => {
+  backHomeBtnRules();
 });
