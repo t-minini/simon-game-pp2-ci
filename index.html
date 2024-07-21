@@ -36,29 +36,67 @@
     <title>Simon Game</title>
   </head>
   <body>
-    <main class="game-wrapper" id="game-wrapper">
-      <section class="start">
-        <div class="start__text-wrapper">
-          <h1 class="start__title">Simon Game</h1>
-          <p class="start__phrase">
-            Test your memory and see how far you can go!
-          </p>
+    <main class="wrapper" id="wrapper">
+      <section class="home-wrapper">
+        <h1 class="heading-primary">
+          <span class="heading-primary--main">Simon Game</span>
+          <span class="heading-primary--main"
+            >Test your memory and see how far you can go!</span
+          >
+        </h1>
+        <div class="home-btns">
+          <button class="home-btns__btn--main">play</button>
+          <button class="home-btns__btn--main">rules</button>
         </div>
-        <div class="start__btns-wrapper">
-          <button class="start__btn-play">Play</button>
-          <button class="start__btn-rules">Rules</button>
+        <div class="home-bg">
+          <div class="home-bg__top-left"></div>
+          <div class="home-bg__top-right"></div>
+          <div class="home-bg__bottom-left"></div>
+          <div class="home-bg__bottom-right"></div>
         </div>
       </section>
-      <section class="game">
-        <div class="game__info-screen">
-          <p class="game__info-screen-text">game status goes here!</p>
+      <section class="rules-wrapper">
+        <div class="rules-content">
+          <h2 class="heading-secondary">Rules</h2>
+          <p class="rules-content__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </div>
-        <div class="game__buttons-wrapper">
-          <div class="game__btn-right-top">GREEN</div>
-          <div class="game__btn-left-top">YELLOW</div>
-          <div class="game__btn-center">PLAY</div>
-          <div class="game__btn-right-bottom">YELLOW</div>
-          <div class="game__btn-left-bottom">BLUE</div>
+      </section>
+      <section class="game-wrapper">
+        <div class="game-bg">
+          <div class="top-screen">
+            <span class="top-screen__text">PRESS START TO PLAY!</span>
+          </div>
+          <div class="game-btns">
+            <button
+              class="game-btns__color-btn game-btns__color-btn--green"
+            ></button>
+            <button
+              class="game-btns__color-btn game-btns__color-btn--red"
+            ></button>
+            <button
+              class="game-btns__color-btn game-btns__color-btn--yellow"
+            ></button>
+            <button
+              class="game-btns__color-btn game-btns__color-btn--blue"
+            ></button>
+            <div class="centre-screen">
+              <span>00</span>
+            </div>
+          </div>
+          <div class="bottom-btns">
+            <button class="bottom-btns__btn--sub">BACK</button>
+            <h3 class="heading-tertiary">Simon Game</h3>
+            <button class="bottom-btns__btn--sub">START</button>
+            <button class="bottom-btns__btn--sub">RESET</button>
+          </div>
         </div>
       </section>
     </main>
