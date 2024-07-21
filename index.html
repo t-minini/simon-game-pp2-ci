@@ -50,8 +50,8 @@
           >
         </h1>
         <div class="home-btns">
-          <button class="home-btns__btn--main">play</button>
-          <button class="home-btns__btn--main">rules</button>
+          <button class="home-btns__btn--main" id="play-btn">play</button>
+          <button class="home-btns__btn--main" id="rules-btn">rules</button>
         </div>
         <div class="home-bg">
           <div class="home-bg__top-left"></div>
@@ -77,30 +77,38 @@
       <section class="game-wrapper">
         <div class="game-bg">
           <div class="top-screen">
-            <span class="top-screen__text">PRESS START TO PLAY!</span>
+            <span class="top-screen__text" id="top-screen-text"
+              >PRESS START TO PLAY!</span
+            >
           </div>
           <div class="game-btns">
             <button
               class="game-btns__color-btn game-btns__color-btn--green"
+              id="green-btn"
             ></button>
             <button
               class="game-btns__color-btn game-btns__color-btn--red"
+              id="red-btn"
             ></button>
             <button
               class="game-btns__color-btn game-btns__color-btn--yellow"
+              id="yellow-btn"
             ></button>
             <button
               class="game-btns__color-btn game-btns__color-btn--blue"
+              id="blue-btn"
             ></button>
-            <div class="centre-screen">
-              <span>00</span>
+            <div class="level-screen">
+              <span class="level-screen__text" id="level-screen-number"
+                >00</span
+              >
             </div>
           </div>
           <div class="bottom-btns">
-            <button class="bottom-btns__btn--sub">BACK</button>
+            <button class="bottom-btns__btn--sub" id="back-btn">BACK</button>
             <h3 class="heading-tertiary">Simon Game</h3>
-            <button class="bottom-btns__btn--sub">START</button>
-            <button class="bottom-btns__btn--sub">RESET</button>
+            <button class="bottom-btns__btn--sub" id="start-btn">START</button>
+            <button class="bottom-btns__btn--sub" id="reset-btn">RESET</button>
           </div>
         </div>
       </section>
