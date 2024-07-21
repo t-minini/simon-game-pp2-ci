@@ -1,0 +1,30 @@
+// @import './../settings/typography';
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-navy;
+}
+
+.wrapper {
+  width: 80vw;
+  height: 80vh;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--sub {
+    width: 70%;
+    text-align: center;
+  }
+}

@@ -13,3 +13,44 @@ html {
 body {
   box-sizing: border-box;
 }
+
+.heading-primary--main {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2f2b2f;
+}
+.heading-primary--sub {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #2f2b2f;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111827;
+}
+
+.wrapper {
+  width: 80vw;
+  height: 80vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading-primary--sub {
+  width: 70%;
+  text-align: center;
+}
