@@ -149,20 +149,32 @@ body {
   border-color: #22b85e;
   border-radius: 0.8rem 0.8rem 5rem 0.8rem;
 }
+.color-btn--green.active {
+  background-color: #68e596;
+}
 .color-btn--red {
   background-color: #ef4444;
   border-color: #ef1b44;
   border-radius: 0.8rem 0.8rem 0.8rem 5rem;
+}
+.color-btn--red.active {
+  background-color: #f7a2a2;
 }
 .color-btn--yellow {
   background-color: #eab308;
   border-color: #d79e0e;
   border-radius: 0.8rem 5rem 0.8rem 0.8rem;
 }
+.color-btn--yellow.active {
+  background-color: #fad45e;
+}
 .color-btn--blue {
   background-color: #3b82f6;
   border-color: #3b6ef6;
   border-radius: 5rem 0.8rem 0.8rem 0.8rem;
+}
+.color-btn--blue.active {
+  background-color: #9dc0fa;
 }
 
 .level-screen {

@@ -9,23 +9,39 @@
     background-color: $color-green-btn;
     border-color: $color-green-btn-border;
     border-radius: 0.8rem 0.8rem 5rem 0.8rem;
+
+    &.active {
+      background-color: $color-green-btn-active;
+    }
   }
 
   &--red {
     background-color: $color-red-btn;
     border-color: $color-red-btn-border;
     border-radius: 0.8rem 0.8rem 0.8rem 5rem;
+
+    &.active {
+      background-color: $color-red-btn-active;
+    }
   }
 
   &--yellow {
     background-color: $color-yellow-btn;
     border-color: $color-yellow-btn-border;
     border-radius: 0.8rem 5rem 0.8rem 0.8rem;
+
+    &.active {
+      background-color: $color-yellow-btn-active;
+    }
   }
 
   &--blue {
     background-color: $color-blue-btn;
     border-color: $color-blue-btn-border;
     border-radius: 5rem 0.8rem 0.8rem 0.8rem;
+
+    &.active {
+      background-color: $color-blue-btn-active;
+    }
   }
 }

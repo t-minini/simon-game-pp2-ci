@@ -3,12 +3,19 @@ $color-blue-screen-bg: #111827;
 
 $color-green-btn: #22c55e;
 $color-green-btn-border: #22b85e;
+$color-green-btn-active: lighten($color-green-btn, 20%);
+
 $color-red-btn: #ef4444;
 $color-red-btn-border: #ef1b44;
+$color-red-btn-active: lighten($color-red-btn, 20%);
+
 $color-yellow-btn: #eab308;
 $color-yellow-btn-border: #d79e0e;
+$color-yellow-btn-active: lighten($color-yellow-btn, 20%);
+
 $color-blue-btn: #3b82f6;
 $color-blue-btn-border: #3b6ef6;
+$color-blue-btn-active: lighten($color-blue-btn, 20%);
 
 $color-white: #ffffff;
 $color-red: #ed000b;
