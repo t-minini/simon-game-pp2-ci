@@ -20,12 +20,12 @@ let startBtn = document.getElementById('start-btn');
 let resetBtn = document.getElementById('reset-btn');
 
 // game sounds
-let greenSound = new Audio('');
-let redSound = new Audio('');
-let yellowSound = new Audio('');
-let blueSound = new Audio('');
+let greenSound = new Audio('../sounds/green-sound.mp3');
+let redSound = new Audio('../sounds/red-sound.mp3');
+let yellowSound = new Audio('../sounds/yellow-sound.mp3');
+let blueSound = new Audio('../sounds/blue-sound.mp3');
 let correctSound = new Audio('');
-let wrongSound = new Audio('');
+let wrongSound = new Audio('../sounds/wrong-sound.mp3');
 
 // game variables
 let level = 0;
@@ -73,8 +73,7 @@ function startGame() {
   nextLevel();
 }
 
-function nextLevel() {
-}
+function nextLevel() {}
 
 // functionality for RESET button on GAME screen
 function resetGame() {
@@ -110,13 +109,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
 rulesBtn.addEventListener('click', rulesScreenVisible);
 playBtn.addEventListener('click', gameScreenVisible);
 startBtn.addEventListener('click', startGame);
-
-// "HOME" button at GAME screen
-gameHomeBtn.addEventListener('click', () => {
-  backHomeBtnGame();
-});
-
-// "HOME" button at RULES screen
-rulesHomeBtn.addEventListener('click', () => {
-  backHomeBtnRules();
-});
+gameHomeBtn.addEventListener('click', backHomeBtnGame);
+rulesHomeBtn.addEventListener('click', backHomeBtnRules);
