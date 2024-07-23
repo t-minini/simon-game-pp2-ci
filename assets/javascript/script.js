@@ -33,7 +33,6 @@ let sequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
 
-
 /**
  * Function to show home screen only
  */
@@ -98,18 +97,24 @@ function nextLevel() {
 }
 
 /**
- * Function to call the startGame function to reset the game 
+ * Function to call the startGame function to reset the game
  * to its initial state.
  */
 function resetGame() {
   startGame();
 }
 
-// functionality for HOME button on GAME screen
+/**
+ * Function to navigate back to the home screen from the game screen.
+ * This function hides the game screen and rules screen while showing
+ * the home screen. Additionally, it reloads the page to reset the game
+ * state and clear any ongoing data.
+ */
 function backHomeBtnGame() {
   homeWrapper.classList.remove('hide');
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.add('hide');
+  location.reload();
 }
 
 // functionality for when player WINS GAME.
