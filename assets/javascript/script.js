@@ -29,7 +29,7 @@ let wrongSound = new Audio('../sounds/wrong-sound.mp3');
 
 // game variables
 let level = 0;
-let sequence = [];
+let computerSequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
 
@@ -77,7 +77,7 @@ function backHomeBtnRules() {
  */
 function startGame() {
   level = 0;
-  sequence = [];
+  computerSequence = [];
   playerSequence = [];
   statusScreen.textContent = 'WATCH THE SEQUENCE!';
   levelScreen.textContent = '01';
