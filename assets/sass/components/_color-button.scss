@@ -5,6 +5,10 @@
   height: 11rem;
   border: 0.6rem solid;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &--green {
     background-color: $color-green-btn;
     border-color: $color-green-btn-border;

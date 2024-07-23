@@ -144,6 +144,9 @@ body {
   height: 11rem;
   border: 0.6rem solid;
 }
+.color-btn:hover {
+  cursor: pointer;
+}
 .color-btn--green {
   background-color: #22c55e;
   border-color: #22b85e;
