@@ -97,9 +97,12 @@ function nextLevel() {
   playerSequence = [];
 }
 
-// functionality for RESET button on GAME screen
+/**
+ * Function to call the startGame function to reset the game 
+ * to its initial state.
+ */
 function resetGame() {
-  // code here
+  startGame();
 }
 
 // functionality for HOME button on GAME screen
