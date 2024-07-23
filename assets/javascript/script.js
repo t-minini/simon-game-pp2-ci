@@ -33,19 +33,27 @@ let sequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
 
-// FUNCTIONS
-// hide and show screens
+
+/**
+ * Function to show home screen only
+ */
 function homeScreenVisible() {
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.add('hide');
 }
 
+/**
+ * Function to show rules screen only
+ */
 function rulesScreenVisible() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.remove('hide');
   gameWrapper.classList.add('hide');
 }
 
+/**
+ * Function to show game screen only
+ */
 function gameScreenVisible() {
   homeWrapper.classList.add('hide');
   rulesWrapper.classList.add('hide');
@@ -53,15 +61,21 @@ function gameScreenVisible() {
   resetBtn.classList.add('hide');
 }
 
-// functionality for HOME button on RULES screen
+/**
+ * Function to to return home from rules screen
+ */
 function backHomeBtnRules() {
   homeWrapper.classList.remove('hide');
   rulesWrapper.classList.add('hide');
   gameWrapper.classList.add('hide');
 }
 
-// game functions
-
+/**
+ * Function to initialize and start: reset the game level to 0,
+ * clear the computer and player's color sequence, update the top status
+ * screen, display the start level 01 to the level screen, make the reset
+ * button visible, hides start button and proceed to the next level.
+ */
 function startGame() {
   level = 0;
   sequence = [];
@@ -73,7 +87,15 @@ function startGame() {
   nextLevel();
 }
 
-function nextLevel() {}
+/**
+ * Function to advance to the next level: increment the game level by 1,
+ * update the level display on the screen, clear the player's input sequence.
+ */
+function nextLevel() {
+  level++;
+  levelScreen.textContent = level.tostring().padStart(2, '0');
+  playerSequence = [];
+}
 
 // functionality for RESET button on GAME screen
 function resetGame() {
