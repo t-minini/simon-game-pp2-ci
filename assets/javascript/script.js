@@ -99,15 +99,28 @@ function nextLevel() {
 }
 
 /**
- * Function to add a new random color to the computer's sequence.
+ * Function to add a new random color to the computer's sequence:
+ * selects a random color from the available options
+ * and adds it to the sequence array.
  */
-function addNewColorToSequence() {}
+function addNewColorToSequence() {
+  const colors = ['green', 'red', 'yellow', 'blue'];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  computerSequence.push(randomColor);
+}
 
 /**
  * Function to play the sequence of colors to the player.
  */
+function playNextSequence() {
+  waitingForPlayer = false;
+  let i = 0;
+  statusScreen.textContent = 'WATCH THE SEQUENCE!';
+  const interval = setInterval(() => {}, 800);
+}
 
-function playNextSequence() {}
+function playSound() {}
+function flashButton() {}
 
 /**
  * Function to call the startGame function to reset the game
