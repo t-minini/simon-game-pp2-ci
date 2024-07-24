@@ -94,7 +94,20 @@ function nextLevel() {
   level++;
   levelScreen.textContent = level.tostring().padStart(2, '0');
   playerSequence = [];
+  addNewColorToSequence();
+  playNextSequence();
 }
+
+/**
+ * Function to add a new random color to the computer's sequence.
+ */
+function addNewColorToSequence() {}
+
+/**
+ * Function to play the sequence of colors to the player.
+ */
+
+function playNextSequence() {}
 
 /**
  * Function to call the startGame function to reset the game
