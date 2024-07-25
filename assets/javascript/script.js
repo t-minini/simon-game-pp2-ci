@@ -119,8 +119,33 @@ function playNextSequence() {
   const interval = setInterval(() => {}, 800);
 }
 
-function playSound() {}
+/**
+ * Function to play the sound associated with a color.
+ * @param {string} color - The color whose associated sound should be played.
+ */
+function playSound() {
+  switch (color) {
+    case 'green':
+      greenSound.play();
+      break;
+    case 'red':
+      redSound.play();
+      break;
+    case 'yellow':
+      yellowSound.play();
+      break;
+    case 'blue':
+      blueSound.play();
+      break;
+  }
+}
 function flashButton() {}
+
+/**
+ * Handles the click event for a color button.
+ * @param {string} color - The color of the button that was clicked.
+ */
+function handleColorClick(color) {}
 
 /**
  * Function to call the startGame function to reset the game
@@ -167,3 +192,8 @@ playBtn.addEventListener('click', gameScreenVisible);
 startBtn.addEventListener('click', startGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 rulesHomeBtn.addEventListener('click', backHomeBtnRules);
+
+greenBtn.addEventListener('click', () => handleColorClick('green'));
+redBtn.addEventListener('click', () => handleColorClick('red'));
+yellowBtn.addEventListener('click', () => handleColorClick('yellow'));
+blueBtn.addEventListener('click', () => handleColorClick('blue'));
