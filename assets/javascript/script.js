@@ -139,7 +139,22 @@ function playSound() {
       break;
   }
 }
-function flashButton() {}
+
+/**
+ * Function to visually flash a color button:
+ * retrieves the button element corresponding to the given color,
+ * adds the 'active' class to the button to change its appearance,
+ * and removes the 'active' class after a short delay (400 milliseconds)
+ * to simulate the button flashing.
+ * @param {string} color - The color of the button to be flashed.
+ */
+function flashButton(color) {
+  const button = document.getElementById(`${color}-btn`);
+  button.classList.add('active');
+  setTimeout(() => {
+    button.classList.remove('active');
+  }, 400);
+}
 
 /**
  * Handles the click event for a color button.
