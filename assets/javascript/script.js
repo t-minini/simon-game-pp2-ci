@@ -92,7 +92,7 @@ function startGame() {
  */
 function nextLevel() {
   level++;
-  levelScreen.textContent = level.tostring().padStart(2, '0');
+  levelScreen.textContent = level.toString().padStart(2, '0');
   playerSequence = [];
   addNewColorToSequence();
   playNextSequence();
