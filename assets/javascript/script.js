@@ -119,27 +119,6 @@ function addNewColorToSequence() {
 }
 
 /**
- * Function to play the sequence of colors to the player.
- */
-function playSequence() {
-  waitingForPlayer = false;
-  let i = 0;
-  statusScreen.textContent = 'WATCH THE SEQUENCE!';
-  const interval = setInterval(() => {
-    if (i >= computerSequence.length) {
-      clearInterval(interval);
-      waitingForPlayer = true;
-      statusScreen.textContent = 'YOUR TURN!';
-    } else {
-      const color = computerSequence[i];
-      playSound(color);
-      flashButton(color);
-      i++;
-    }
-  }, 1000);
-}
-
-/**
  * Function to play the sound associated with a color.
  * @param {string} color - The color whose associated sound should be played.
  */
@@ -160,6 +139,9 @@ function playSound(color) {
   }
 }
 
+/**
+ * Function to flash the buttons.
+ */
 function flashButton(color) {
   const button = document.getElementById(`${color}-btn`);
   button.classList.add('active');
@@ -169,38 +151,25 @@ function flashButton(color) {
 }
 
 /**
- * Function to play the sound and flash the color associated with each button.
- * @param {string} color - The color whose associated sound should be played.
+ * Function to play the computer sequence of colors to the player.
  */
-// function playSoundAndFlashButton(color) {
-//   const button = document.getElementById(`${color}-btn`);
-//   let sound;
-
-//   switch (color) {
-//     case 'green':
-//       sound = greenSound;
-//       break;
-//     case 'red':
-//       sound = redSound;
-//       break;
-//     case 'yellow':
-//       sound = yellowSound;
-//       break;
-//     case 'blue':
-//       sound = blueSound;
-//       break;
-//   }
-
-//   if (sound) {
-//     sound.currentTime = 0;
-//     sound.play();
-//   }
-
-//   button.classList.add('active');
-//   setTimeout(() => {
-//     button.classList.remove('active');
-//   }, 400);
-// }
+function playSequence() {
+  waitingForPlayer = false;
+  let i = 0;
+  statusScreen.textContent = 'WATCH THE SEQUENCE!';
+  const interval = setInterval(() => {
+    if (i >= computerSequence.length) {
+      clearInterval(interval);
+      waitingForPlayer = true;
+      statusScreen.textContent = 'YOUR TURN!';
+    } else {
+      const color = computerSequence[i];
+      playSound(color);
+      flashButton(color);
+      i++;
+    }
+  }, 1000);
+}
 
 /**
  * Handles the click event for a color button.
