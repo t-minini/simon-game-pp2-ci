@@ -252,3 +252,8 @@ greenBtn.addEventListener('click', () => handleColorClick('green'));
 redBtn.addEventListener('click', () => handleColorClick('red'));
 yellowBtn.addEventListener('click', () => handleColorClick('yellow'));
 blueBtn.addEventListener('click', () => handleColorClick('blue'));
+
+greenBtn.addEventListener('touchstart', () => handleColorClick('green'));
+redBtn.addEventListener('touchstart', () => handleColorClick('red'));
+yellowBtn.addEventListener('touchstart', () => handleColorClick('yellow'));
+blueBtn.addEventListener('touchstart', () => handleColorClick('blue'));
