@@ -132,7 +132,8 @@ function playSequence() {
       statusScreen.textContent = 'YOUR TURN!';
     } else {
       const color = computerSequence[i];
-      playSoundAndFlashButton(color);
+      playSound(color);
+      flashButton(color);
       i++;
     }
   }, 800);
@@ -142,47 +143,25 @@ function playSequence() {
  * Function to play the sound associated with a color.
  * @param {string} color - The color whose associated sound should be played.
  */
-// function playSound(color) {
-//   switch (color) {
-//     case 'green':
-//       greenSound.play();
-//       break;
-//     case 'red':
-//       redSound.play();
-//       break;
-//     case 'yellow':
-//       yellowSound.play();
-//       break;
-//     case 'blue':
-//       blueSound.play();
-//       break;
-//   }
-// }
-
-function playSoundAndFlashButton(color) {
-  const button = document.getElementById(`${color}-btn`);
-  let sound;
-
+function playSound(color) {
   switch (color) {
     case 'green':
-      sound = greenSound;
+      greenSound.play();
       break;
     case 'red':
-      sound = redSound;
+      redSound.play();
       break;
     case 'yellow':
-      sound = yellowSound;
+      yellowSound.play();
       break;
     case 'blue':
-      sound = blueSound;
+      blueSound.play();
       break;
   }
+}
 
-  if (sound) {
-    sound.currentTime = 0;
-    sound.play();
-  }
-
+function flashButton(color) {
+  const button = document.getElementById(`${color}-btn`);
   button.classList.add('active');
   setTimeout(() => {
     button.classList.remove('active');
@@ -190,15 +169,33 @@ function playSoundAndFlashButton(color) {
 }
 
 /**
- * Function to visually flash a color button:
- * retrieves the button element corresponding to the given color,
- * adds the 'active' class to the button to change its appearance,
- * and removes the 'active' class after a short delay (400 milliseconds)
- * to simulate the button flashing.
- * @param {string} color - The color of the button to be flashed.
+ * Function to play the sound and flash the color associated with each button.
+ * @param {string} color - The color whose associated sound should be played.
  */
-// function flashButton(color) {
+// function playSoundAndFlashButton(color) {
 //   const button = document.getElementById(`${color}-btn`);
+//   let sound;
+
+//   switch (color) {
+//     case 'green':
+//       sound = greenSound;
+//       break;
+//     case 'red':
+//       sound = redSound;
+//       break;
+//     case 'yellow':
+//       sound = yellowSound;
+//       break;
+//     case 'blue':
+//       sound = blueSound;
+//       break;
+//   }
+
+//   if (sound) {
+//     sound.currentTime = 0;
+//     sound.play();
+//   }
+
 //   button.classList.add('active');
 //   setTimeout(() => {
 //     button.classList.remove('active');
@@ -213,7 +210,8 @@ function handleColorClick(color) {
   if (!waitingForPlayer) return;
 
   playerSequence.push(color);
-  playSoundAndFlashButton(color);
+  playSound(color);
+  flashButton(color);
 
   if (
     playerSequence[playerSequence.length - 1] !==
