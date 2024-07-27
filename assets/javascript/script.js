@@ -27,6 +27,14 @@ let blueSound = new Audio('assets/sounds/blue-sound.mp3');
 let correctSound = new Audio('');
 let wrongSound = new Audio('assets/sounds/wrong-sound.mp3');
 
+// preload sounds
+greenSound.load();
+redSound.load();
+yellowSound.load();
+blueSound.load();
+correctSound.load();
+wrongSound.load();
+
 // game variables
 let level = 0;
 let computerSequence = [];
