@@ -17,12 +17,13 @@ body {
 .heading-primary--main {
   font-family: "Orbitron", sans-serif;
   font-size: 3rem;
+  letter-spacing: 0.4rem;
   font-weight: bold;
   color: #2f2b2f;
 }
 .heading-primary--sub {
   font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   color: #2f2b2f;
 }
@@ -54,93 +55,6 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   color: #ffffff;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #111827;
-}
-
-.wrapper {
-  width: 29rem;
-  height: 36rem;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.8rem;
-}
-
-.wrapper-home {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.game-wrapper {
-  height: 100%;
-  padding: 2rem;
-}
-
-.game-bg {
-  width: 25rem;
-  height: 32rem;
-  border-radius: 0.8rem;
-  background: #3c3e3d;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
-.game-btns {
-  width: 23rem;
-  height: 23rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 1rem;
-  row-gap: 1rem;
-}
-
-.heading-primary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.heading-primary--sub {
-  width: 70%;
-  text-align: center;
-}
-
-.level-screen {
-  position: absolute;
-  left: calc(50% - 2.25rem);
-  top: calc(50% - 2.25rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.status-screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.bottom-btns {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
 }
 
 .hide {
@@ -223,4 +137,136 @@ body {
   background: #2f2b2f;
   border: none;
   border-radius: 0.8rem;
+}
+
+.button {
+  background: #3c3e3d;
+  color: #d9d9d9;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+.button--main {
+  font-size: 1.4rem;
+  width: 8rem;
+  height: 2.5rem;
+  margin: 0 0.5rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111827;
+}
+
+.wrapper {
+  width: 29rem;
+  height: 36rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+}
+
+.home-btns {
+  margin-top: 2rem;
+}
+
+.game-bg {
+  width: 25rem;
+  height: 32rem;
+  border-radius: 0.8rem;
+  background: #3c3e3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.game-btns {
+  width: 23rem;
+  height: 23rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading-primary--main {
+  width: 100%;
+  text-align: center;
+}
+.heading-primary--sub {
+  width: 70%;
+  text-align: center;
+}
+
+.level-screen {
+  position: absolute;
+  left: calc(50% - 2.25rem);
+  top: calc(50% - 2.25rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.bottom-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.home-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-container--hide {
+  display: none;
+}
+
+.rules-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rules-container--hide {
+  display: none;
+}
+
+.game-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-container--hide {
+  display: none;
 }

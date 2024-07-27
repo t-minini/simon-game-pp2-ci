@@ -1,14 +1,14 @@
 // home screen elements
-let homeWrapper = document.getElementById('wrapper-home');
+let homeWrapper = document.getElementById('home-container');
 let playBtn = document.getElementById('play-btn');
 let rulesBtn = document.getElementById('rules-btn');
 
 // rules screen elements
-let rulesWrapper = document.getElementById('rules-wrapper');
+let rulesWrapper = document.getElementById('rules-container');
 let rulesHomeBtn = document.getElementById('rules-home-btn');
 
 // game screen elements
-let gameWrapper = document.getElementById('game-wrapper');
+let gameWrapper = document.getElementById('game-container');
 let statusScreen = document.getElementById('status-screen-text');
 let levelScreen = document.getElementById('level-screen-number');
 let greenBtn = document.getElementById('green-btn');
@@ -37,26 +37,27 @@ let waitingForPlayer = false;
  * Function to show home screen only
  */
 function homeScreenVisible() {
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.add('hide');
+  homeWrapper.classList.remove('home-container--hide');
+  rulesWrapper.classList.add('rules-container--hide');
+  gameWrapper.classList.add('game-container--hide');
 }
 
 /**
  * Function to show rules screen only
  */
 function rulesScreenVisible() {
-  homeWrapper.classList.add('hide');
-  rulesWrapper.classList.remove('hide');
-  gameWrapper.classList.add('hide');
+  homeWrapper.classList.add('home-container--hide');
+  rulesWrapper.classList.remove('rules-container--hide');
+  gameWrapper.classList.add('game-container--hide');
 }
 
 /**
  * Function to show game screen only
  */
 function gameScreenVisible() {
-  homeWrapper.classList.add('hide');
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.remove('hide');
+  homeWrapper.classList.add('home-container--hide');
+  rulesWrapper.classList.add('rules-container--hide');
+  gameWrapper.classList.remove('game-container--hide');
   resetBtn.classList.add('hide');
 }
 
@@ -64,9 +65,9 @@ function gameScreenVisible() {
  * Function to to return home from rules screen
  */
 function backHomeBtnRules() {
-  homeWrapper.classList.remove('hide');
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.add('hide');
+  homeWrapper.classList.remove('home-container--hide');
+  rulesWrapper.classList.add('rules-container--hide');
+  gameWrapper.classList.add('game-container--hide');
 }
 
 /**
