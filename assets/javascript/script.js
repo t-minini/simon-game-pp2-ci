@@ -1,5 +1,5 @@
 // home screen elements
-let homeWrapper = document.getElementById('home-wrapper');
+let homeWrapper = document.getElementById('wrapper-home');
 let playBtn = document.getElementById('play-btn');
 let rulesBtn = document.getElementById('rules-btn');
 
@@ -219,12 +219,19 @@ function winnerGame() {
   // code here
 }
 
-// functionality for when is GAME OVER.
+/**
+ * Function to handle the game over state when the player makes an incorrect move.
+ */
 function gameOver() {
-  homeWrapper.classList.add('hide');
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.remove('hide');
-  resetBtn.classList.add('hide');
+  statusScreen.textContent = 'WRONG SEQUENCE!';
+  levelScreen.textContent = 'NO';
+  wrongSound.play();
+  setTimeout(() => {
+    statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
+    levelScreen.textContent = '--';
+    resetBtn.classList.remove('hide');
+  }, 2000);
+  waitingForPlayer = false;
 }
 
 // EVENT LISTENERS
