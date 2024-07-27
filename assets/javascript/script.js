@@ -136,7 +136,7 @@ function playSequence() {
       flashButton(color);
       i++;
     }
-  }, 800);
+  }, 1000);
 }
 
 /**
