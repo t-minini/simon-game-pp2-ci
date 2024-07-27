@@ -20,12 +20,12 @@ let startBtn = document.getElementById('start-btn');
 let resetBtn = document.getElementById('reset-btn');
 
 // game sounds
-let greenSound = new Audio('../sounds/green-sound.mp3');
-let redSound = new Audio('../sounds/red-sound.mp3');
-let yellowSound = new Audio('../sounds/yellow-sound.mp3');
-let blueSound = new Audio('../sounds/blue-sound.mp3');
+let greenSound = new Audio('assets/sounds/green-sound.mp3');
+let redSound = new Audio('assets/sounds/red-sound.mp3');
+let yellowSound = new Audio('assets/sounds/yellow-sound.mp3');
+let blueSound = new Audio('assets/sounds/blue-sound.mp3');
 let correctSound = new Audio('');
-let wrongSound = new Audio('../sounds/wrong-sound.mp3');
+let wrongSound = new Audio('assets/sounds/wrong-sound.mp3');
 
 // game variables
 let level = 0;
@@ -160,7 +160,27 @@ function flashButton(color) {
  * Handles the click event for a color button.
  * @param {string} color - The color of the button that was clicked.
  */
-function handleColorClick(color) {}
+function handleColorClick(color) {
+  if (!waitingForPlayer) return;
+
+  playerSequence.push(color);
+  playSound(color);
+  flashButton(color);
+
+  if (
+    playerSequence[playerSequence.length - 1] !==
+    computerSequence[playerSequence.length - 1]
+  ) {
+    gameOver();
+    return;
+  }
+
+  if (playerSequence.length === computerSequence.length) {
+    // correctSound.play();
+    levelScreen.textContent = 'OK';
+    setTimeout(nextLevel, 1000);
+  }
+}
 
 /**
  * Function to call the startGame function to reset the game
