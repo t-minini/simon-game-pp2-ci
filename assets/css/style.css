@@ -247,8 +247,6 @@ body {
 
 .level-screen {
   position: absolute;
-  left: calc(50% - 2.25rem);
-  top: calc(50% - 2.25rem);
   display: flex;
   justify-content: center;
   align-items: center;
