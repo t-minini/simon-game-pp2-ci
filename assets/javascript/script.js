@@ -27,6 +27,14 @@ let blueSound = new Audio('assets/sounds/blue-sound.mp3');
 let correctSound = new Audio('');
 let wrongSound = new Audio('assets/sounds/wrong-sound.mp3');
 
+// preload sounds
+greenSound.load();
+redSound.load();
+yellowSound.load();
+blueSound.load();
+correctSound.load();
+wrongSound.load();
+
 // game variables
 let level = 0;
 let computerSequence = [];
@@ -96,7 +104,7 @@ function nextLevel() {
   levelScreen.textContent = level.toString().padStart(2, '0');
   playerSequence = [];
   addNewColorToSequence();
-  playNextSequence();
+  playSequence();
 }
 
 /**
@@ -113,7 +121,7 @@ function addNewColorToSequence() {
 /**
  * Function to play the sequence of colors to the player.
  */
-function playNextSequence() {
+function playSequence() {
   waitingForPlayer = false;
   let i = 0;
   statusScreen.textContent = 'WATCH THE SEQUENCE!';
@@ -124,8 +132,7 @@ function playNextSequence() {
       statusScreen.textContent = 'YOUR TURN!';
     } else {
       const color = computerSequence[i];
-      playSound(color);
-      flashButton(color);
+      playSoundAndFlashButton(color);
       i++;
     }
   }, 800);
@@ -135,21 +142,51 @@ function playNextSequence() {
  * Function to play the sound associated with a color.
  * @param {string} color - The color whose associated sound should be played.
  */
-function playSound(color) {
+// function playSound(color) {
+//   switch (color) {
+//     case 'green':
+//       greenSound.play();
+//       break;
+//     case 'red':
+//       redSound.play();
+//       break;
+//     case 'yellow':
+//       yellowSound.play();
+//       break;
+//     case 'blue':
+//       blueSound.play();
+//       break;
+//   }
+// }
+
+function playSoundAndFlashButton(color) {
+  const button = document.getElementById(`${color}-btn`);
+  let sound;
+
   switch (color) {
     case 'green':
-      greenSound.play();
+      sound = greenSound;
       break;
     case 'red':
-      redSound.play();
+      sound = redSound;
       break;
     case 'yellow':
-      yellowSound.play();
+      sound = yellowSound;
       break;
     case 'blue':
-      blueSound.play();
+      sound = blueSound;
       break;
   }
+
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+
+  button.classList.add('active');
+  setTimeout(() => {
+    button.classList.remove('active');
+  }, 400);
 }
 
 /**
@@ -160,13 +197,13 @@ function playSound(color) {
  * to simulate the button flashing.
  * @param {string} color - The color of the button to be flashed.
  */
-function flashButton(color) {
-  const button = document.getElementById(`${color}-btn`);
-  button.classList.add('active');
-  setTimeout(() => {
-    button.classList.remove('active');
-  }, 400);
-}
+// function flashButton(color) {
+//   const button = document.getElementById(`${color}-btn`);
+//   button.classList.add('active');
+//   setTimeout(() => {
+//     button.classList.remove('active');
+//   }, 400);
+// }
 
 /**
  * Handles the click event for a color button.
@@ -176,8 +213,7 @@ function handleColorClick(color) {
   if (!waitingForPlayer) return;
 
   playerSequence.push(color);
-  playSound(color);
-  flashButton(color);
+  playSoundAndFlashButton(color);
 
   if (
     playerSequence[playerSequence.length - 1] !==
@@ -248,12 +284,39 @@ resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 rulesHomeBtn.addEventListener('click', backHomeBtnRules);
 
-greenBtn.addEventListener('click', () => handleColorClick('green'));
-redBtn.addEventListener('click', () => handleColorClick('red'));
-yellowBtn.addEventListener('click', () => handleColorClick('yellow'));
-blueBtn.addEventListener('click', () => handleColorClick('blue'));
+greenBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  {
+    event.preventDefault();
+    handleColorClick('green');
+  }
+});
+redBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  handleColorClick('red');
+});
+yellowBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  handleColorClick('yellow');
+});
+blueBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  handleColorClick('blue');
+});
 
-greenBtn.addEventListener('touchstart', () => handleColorClick('green'));
-redBtn.addEventListener('touchstart', () => handleColorClick('red'));
-yellowBtn.addEventListener('touchstart', () => handleColorClick('yellow'));
-blueBtn.addEventListener('touchstart', () => handleColorClick('blue'));
+greenBtn.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  handleColorClick('green');
+});
+redBtn.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  handleColorClick('red');
+});
+yellowBtn.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  handleColorClick('yellow');
+});
+blueBtn.addEventListener('touchstart', (event) => {
+  event.preventDefault();
+  handleColorClick('blue');
+});
