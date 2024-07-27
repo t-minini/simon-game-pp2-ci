@@ -116,14 +116,25 @@ function playNextSequence() {
   waitingForPlayer = false;
   let i = 0;
   statusScreen.textContent = 'WATCH THE SEQUENCE!';
-  const interval = setInterval(() => {}, 800);
+  const interval = setInterval(() => {
+    if (i >= computerSequence.length) {
+      clearInterval(interval);
+      waitingForPlayer = true;
+      statusScreen.textContent = 'YOUR TURN!';
+    } else {
+      const color = computerSequence[i];
+      playSound(color);
+      flashButton(color);
+      i++;
+    }
+  }, 800);
 }
 
 /**
  * Function to play the sound associated with a color.
  * @param {string} color - The color whose associated sound should be played.
  */
-function playSound() {
+function playSound(color) {
   switch (color) {
     case 'green':
       greenSound.play();
@@ -225,6 +236,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 rulesBtn.addEventListener('click', rulesScreenVisible);
 playBtn.addEventListener('click', gameScreenVisible);
 startBtn.addEventListener('click', startGame);
+resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 rulesHomeBtn.addEventListener('click', backHomeBtnRules);
 
