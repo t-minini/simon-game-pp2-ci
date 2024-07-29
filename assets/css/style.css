@@ -175,6 +175,9 @@ body {
   height: 3rem;
   font-size: 1.4rem;
 }
+.button:disabled {
+  color: #3c3e3d;
+}
 .button--primary {
   width: 10rem;
   margin: 0 0.5rem;

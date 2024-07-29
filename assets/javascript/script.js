@@ -204,10 +204,12 @@ function winnerGame() {
   statusScreen.textContent = 'CONGRATULATIONS, YOU WIN!';
   levelScreen.textContent = '\u{1F3C6}';
   gameSounds.win.play();
+  resetBtn.disabled = true;
   setTimeout(() => {
     statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
     levelScreen.textContent = '--';
     resetBtn.classList.remove('hide');
+    resetBtn.disabled = false;
   }, 4000);
   waitingForPlayer = false;
 }
@@ -218,6 +220,7 @@ function winnerGame() {
 function gameOver() {
   statusScreen.textContent = 'WRONG SEQUENCE!';
   levelScreen.textContent = 'NO';
+  resetBtn.disabled = true;
   setTimeout(() => {
     gameSounds.gameOver.play();
     levelScreen.textContent = '\u{1F480}';
@@ -225,6 +228,7 @@ function gameOver() {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
       levelScreen.textContent = '--';
       resetBtn.classList.remove('hide');
+      resetBtn.disabled = false;
     }, 2000);
   }, 1000);
   waitingForPlayer = false;

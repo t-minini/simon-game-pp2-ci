@@ -8,6 +8,10 @@
   height: 3rem;
   font-size: 1.4rem;
 
+  &:disabled {
+    color: $color-grey-light;
+  }
+
   &--primary {
     width: 10rem;
     margin: 0 0.5rem;
