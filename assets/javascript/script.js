@@ -26,7 +26,8 @@ const gameSounds = {
   yellow: new Audio('assets/sounds/yellow-sound.mp3'),
   blue: new Audio('assets/sounds/blue-sound.mp3'),
   correct: new Audio(''),
-  wrong: new Audio('assets/sounds/wrong-sound.mp3'),
+  win: new Audio('assets/sounds/win.mp3'),
+  gameOver: new Audio('assets/sounds/game-over.mp3'),
 };
 
 // preload sounds
@@ -204,6 +205,7 @@ function backHomeBtnGame() {
 function winnerGame() {
   statusScreen.textContent = 'CONGRATS. YOU WIN! ';
   levelScreen.textContent = '\u{1F3C6}';
+  gameSounds.win.play();
   setTimeout(() => {
     statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
     levelScreen.textContent = '--';
@@ -220,7 +222,7 @@ function gameOver() {
   levelScreen.textContent = 'NO';
   setTimeout(() => {
     levelScreen.textContent = '\u{1F480}';
-    gameSounds.wrong.play();
+    gameSounds.gameOver.play();
     setTimeout(() => {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
       levelScreen.textContent = '--';
