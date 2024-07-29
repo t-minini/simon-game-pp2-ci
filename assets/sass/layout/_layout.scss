@@ -83,3 +83,16 @@ body {
   align-items: center;
   margin-top: 1rem;
 }
+
+.close-icon {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-blue-btn;
+  }
+}
