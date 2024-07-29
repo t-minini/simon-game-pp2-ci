@@ -187,7 +187,7 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,8 +195,8 @@ body {
 }
 
 .wrapper {
-  width: 29rem;
-  height: 36rem;
+  width: 32rem;
+  height: 40rem;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
