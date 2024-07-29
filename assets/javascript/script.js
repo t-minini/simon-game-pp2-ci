@@ -1,13 +1,13 @@
-// home screen elements
+// HOME SCREEN ELEMENTS
 let homeWrapper = document.getElementById('home-container');
 let playBtn = document.getElementById('play-btn');
 let rulesBtn = document.getElementById('rules-btn');
 
-// rules screen elements
+// RULES SCREEN ELEMENTS
 let rulesWrapper = document.getElementById('rules-container');
 let rulesHomeBtn = document.getElementById('rules-home-btn');
 
-// game screen elements
+// GAME SCREEN ELEMENTS
 let gameWrapper = document.getElementById('game-container');
 let statusScreen = document.getElementById('status-screen-text');
 let levelScreen = document.getElementById('level-screen-number');
@@ -19,7 +19,7 @@ let gameHomeBtn = document.getElementById('home-btn');
 let startBtn = document.getElementById('start-btn');
 let resetBtn = document.getElementById('reset-btn');
 
-// game sounds object
+// GAME SOUNDS
 const gameSounds = {
   green: new Audio('assets/sounds/green-sound.mp3'),
   red: new Audio('assets/sounds/red-sound.mp3'),
@@ -30,10 +30,10 @@ const gameSounds = {
   gameOver: new Audio('assets/sounds/game-over.mp3'),
 };
 
-// preload sounds
+// PRELOAD SOUNDS
 Object.values(gameSounds).forEach((sound) => sound.load());
 
-// game variables
+// GAME VARIABLES
 let level = 0;
 let computerSequence = [];
 let playerSequence = [];
@@ -69,7 +69,7 @@ function gameScreenVisible() {
 }
 
 /**
- * Function to to return home from rules screen
+ * Function to return home from rules screen
  */
 function backHomeBtnRules() {
   homeWrapper.classList.remove('home-container--hide');
@@ -78,7 +78,7 @@ function backHomeBtnRules() {
 }
 
 /**
- * Function to initialize and start game.
+ * Function to initialize and start the game
  */
 function startGame() {
   level = 0;
@@ -92,7 +92,7 @@ function startGame() {
 }
 
 /**
- * Function to advance to the next level.
+ * Function to advance to the next level
  */
 function nextLevel() {
   level++;
@@ -107,7 +107,7 @@ function nextLevel() {
 }
 
 /**
- * Function to add a new random color to the computer's sequence.
+ * Function to add a new random color to the computer's sequence
  */
 function addNewColorToSequence() {
   const colors = ['green', 'red', 'yellow', 'blue'];
@@ -116,15 +116,15 @@ function addNewColorToSequence() {
 }
 
 /**
- * Function to play the sound associated with a color.
- * @param {string} color - The color whose associated sound should be played.
+ * Function to play the sound associated with a color
+ * @param {string} color - The color whose associated sound should be played
  */
 function playSound(color) {
   gameSounds[color].play();
 }
 
 /**
- * Function to flash the buttons.
+ * Function to flash the buttons
  */
 function flashButton(color) {
   const button = document.getElementById(`${color}-btn`);
@@ -135,7 +135,7 @@ function flashButton(color) {
 }
 
 /**
- * Function to play the computer sequence of colors to the player.
+ * Function to play the computer sequence of colors to the player
  */
 function playSequence() {
   waitingForPlayer = false;
@@ -156,8 +156,8 @@ function playSequence() {
 }
 
 /**
- * Handles the click event for a color button.
- * @param {string} color - The color of the button that was clicked.
+ * Handles the click event for a color button
+ * @param {string} color - The color of the button that was clicked
  */
 function handleColorClick(color) {
   if (!waitingForPlayer) return;
@@ -175,22 +175,20 @@ function handleColorClick(color) {
   }
 
   if (playerSequence.length === computerSequence.length) {
-    // correctSound.play();
     levelScreen.textContent = 'OK';
     setTimeout(nextLevel, 1000);
   }
 }
 
 /**
- * Function to call the startGame function to reset the game
- * to its initial state.
+ * Function to reset the game to its initial state
  */
 function resetGame() {
   startGame();
 }
 
 /**
- * Function to navigate back to the home screen from the game screen.
+ * Function to navigate back to the home screen from the game screen
  */
 function backHomeBtnGame() {
   homeWrapper.classList.remove('hide');
@@ -200,7 +198,7 @@ function backHomeBtnGame() {
 }
 
 /**
- * Function for when player wins the game.
+ * Function for when the player wins the game
  */
 function winnerGame() {
   statusScreen.textContent = 'CONGRATS. YOU WIN! ';
@@ -215,14 +213,14 @@ function winnerGame() {
 }
 
 /**
- * Function to handle the game over state when the player makes an incorrect move.
+ * Function to handle the game over state when the player makes an incorrect move
  */
 function gameOver() {
   statusScreen.textContent = 'WRONG SEQUENCE!';
   levelScreen.textContent = 'NO';
+  gameSounds.gameOver.play();
   setTimeout(() => {
     levelScreen.textContent = '\u{1F480}';
-    gameSounds.gameOver.play();
     setTimeout(() => {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
       levelScreen.textContent = '--';
@@ -233,11 +231,12 @@ function gameOver() {
 }
 
 // EVENT LISTENERS
-// show home screen on page load
-window.addEventListener('DOMContentLoaded', (event) => {
+// Show home screen on page load
+window.addEventListener('DOMContentLoaded', () => {
   homeScreenVisible();
 });
 
+// Button event listeners
 rulesBtn.addEventListener('click', rulesScreenVisible);
 playBtn.addEventListener('click', gameScreenVisible);
 startBtn.addEventListener('click', startGame);
@@ -245,6 +244,7 @@ resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 rulesHomeBtn.addEventListener('click', backHomeBtnRules);
 
+// Color button event listeners
 const colorButtons = {
   green: greenBtn,
   red: redBtn,
