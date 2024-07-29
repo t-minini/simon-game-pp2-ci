@@ -218,8 +218,8 @@ function winnerGame() {
 function gameOver() {
   statusScreen.textContent = 'WRONG SEQUENCE!';
   levelScreen.textContent = 'NO';
-  gameSounds.gameOver.play();
   setTimeout(() => {
+    gameSounds.gameOver.play();
     levelScreen.textContent = '\u{1F480}';
     setTimeout(() => {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
