@@ -201,7 +201,7 @@ function backHomeBtnGame() {
  * Function for when the player wins the game
  */
 function winnerGame() {
-  statusScreen.textContent = 'CONGRATS. YOU WIN! ';
+  statusScreen.textContent = 'CONGRATULATIONS, YOU WIN!';
   levelScreen.textContent = '\u{1F3C6}';
   gameSounds.win.play();
   setTimeout(() => {

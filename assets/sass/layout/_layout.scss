@@ -20,12 +20,12 @@ body {
 }
 
 .home-btns {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .game-bg {
-  width: 25rem;
-  height: 32rem;
+  width: 29rem;
+  height: 37rem;
   border-radius: 0.8rem;
   background: $color-grey-light;
   display: flex;
@@ -36,8 +36,8 @@ body {
 }
 
 .game-btns {
-  width: 23rem;
-  height: 23rem;
+  // width: 100%;
+  // height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);

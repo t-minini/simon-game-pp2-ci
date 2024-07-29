@@ -16,14 +16,14 @@ body {
 
 .heading-primary--main {
   font-family: "Orbitron", sans-serif;
-  font-size: 3rem;
+  font-size: 3.6rem;
   letter-spacing: 0.4rem;
   font-weight: bold;
   color: #2f2b2f;
 }
 .heading-primary--sub {
   font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 300;
   color: #2f2b2f;
 }
@@ -47,14 +47,14 @@ body {
   font-weight: 700;
   font-size: 1.2rem;
   line-height: 1.2rem;
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
 }
 
 .status-screen__text {
   font-family: "Orbitron", sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 0.12rem;
 }
@@ -80,7 +80,7 @@ body {
 
 .level-screen__text {
   font-family: "Orbitron", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
 }
 
 .btn--sub {
@@ -95,8 +95,8 @@ body {
 }
 
 .color-btn {
-  width: 11rem;
-  height: 11rem;
+  width: 13rem;
+  height: 13rem;
   border: 0.6rem solid;
 }
 .color-btn:hover {
@@ -136,8 +136,8 @@ body {
 }
 
 .level-screen {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5rem;
+  height: 5rem;
   background: #1c0003;
   border: 0.3rem solid #2f2b2f;
   border-radius: 50%;
@@ -151,7 +151,7 @@ body {
   background: #1c0003;
   border: 0.3rem solid #2f2b2f;
   border-radius: 0.8rem;
-  min-height: 2.5rem;
+  min-height: 3rem;
 }
 .status-screen__text {
   width: 100%;
@@ -161,7 +161,7 @@ body {
 
 .bottom-btns {
   width: 100%;
-  height: 2.5rem;
+  height: 3rem;
 }
 
 .button {
@@ -171,18 +171,18 @@ body {
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
-  height: 2.5rem;
+  height: 3rem;
   font-size: 1.4rem;
 }
 .button--primary {
-  width: 8rem;
+  width: 10rem;
   margin: 0 0.5rem;
 }
 .button--secondary {
   width: 6.2rem;
 }
 .button--tertiary {
-  width: 5.5rem;
+  width: 7rem;
   background: #2f2b2f;
 }
 
@@ -206,12 +206,12 @@ body {
 }
 
 .home-btns {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .game-bg {
-  width: 25rem;
-  height: 32rem;
+  width: 29rem;
+  height: 37rem;
   border-radius: 0.8rem;
   background: #3c3e3d;
   display: flex;
@@ -222,8 +222,6 @@ body {
 }
 
 .game-btns {
-  width: 23rem;
-  height: 23rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);

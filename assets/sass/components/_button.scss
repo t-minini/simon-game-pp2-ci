@@ -5,11 +5,11 @@
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
-  height: 2.5rem;
+  height: 3rem;
   font-size: 1.4rem;
 
   &--primary {
-    width: 8rem;
+    width: 10rem;
     margin: 0 0.5rem;
   }
 
@@ -18,7 +18,7 @@
   }
 
   &--tertiary {
-    width: 5.5rem;
+    width: 7rem;
     background: $color-grey-dark;
   }
 }
