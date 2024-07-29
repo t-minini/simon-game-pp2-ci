@@ -37,7 +37,7 @@ let level = 0;
 let computerSequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
-const WINNING_LEVEL = 10;
+const WINNING_LEVEL = 2;
 
 /**
  * Function to show home screen
@@ -202,8 +202,13 @@ function backHomeBtnGame() {
  * Function for when player wins the game.
  */
 function winnerGame() {
-  statusScreen.textContent = 'YOU WIN!';
-  levelScreen.textContent = 'WIN';
+  statusScreen.textContent = 'CONGRATS. YOU WIN! ';
+  levelScreen.textContent = '\u{1F3C6}';
+  setTimeout(() => {
+    statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
+    levelScreen.textContent = '--';
+    resetBtn.classList.remove('hide');
+  }, 4000);
   waitingForPlayer = false;
 }
 
@@ -213,12 +218,15 @@ function winnerGame() {
 function gameOver() {
   statusScreen.textContent = 'WRONG SEQUENCE!';
   levelScreen.textContent = 'NO';
-  gameSounds.wrong.play();
   setTimeout(() => {
-    statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
-    levelScreen.textContent = '--';
-    resetBtn.classList.remove('hide');
-  }, 2000);
+    levelScreen.textContent = '\u{1F480}';
+    gameSounds.wrong.play();
+    setTimeout(() => {
+      statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
+      levelScreen.textContent = '--';
+      resetBtn.classList.remove('hide');
+    }, 2000);
+  }, 1000);
   waitingForPlayer = false;
 }
 
