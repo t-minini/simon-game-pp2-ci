@@ -19,21 +19,18 @@ let gameHomeBtn = document.getElementById('home-btn');
 let startBtn = document.getElementById('start-btn');
 let resetBtn = document.getElementById('reset-btn');
 
-// game sounds
-let greenSound = new Audio('assets/sounds/green-sound.mp3');
-let redSound = new Audio('assets/sounds/red-sound.mp3');
-let yellowSound = new Audio('assets/sounds/yellow-sound.mp3');
-let blueSound = new Audio('assets/sounds/blue-sound.mp3');
-let correctSound = new Audio('');
-let wrongSound = new Audio('assets/sounds/wrong-sound.mp3');
+// game sounds object
+const gameSounds = {
+  green: new Audio('assets/sounds/green-sound.mp3'),
+  red: new Audio('assets/sounds/red-sound.mp3'),
+  yellow: new Audio('assets/sounds/yellow-sound.mp3'),
+  blue: new Audio('assets/sounds/blue-sound.mp3'),
+  correct: new Audio(''),
+  wrong: new Audio('assets/sounds/wrong-sound.mp3'),
+};
 
 // preload sounds
-greenSound.load();
-redSound.load();
-yellowSound.load();
-blueSound.load();
-correctSound.load();
-wrongSound.load();
+Object.values(gameSounds).forEach((sound) => sound.load());
 
 // game variables
 let level = 0;
@@ -42,7 +39,7 @@ let playerSequence = [];
 let waitingForPlayer = false;
 
 /**
- * Function to show home screen only
+ * Function to show home screen
  */
 function homeScreenVisible() {
   homeWrapper.classList.remove('home-container--hide');
@@ -51,7 +48,7 @@ function homeScreenVisible() {
 }
 
 /**
- * Function to show rules screen only
+ * Function to show rules screen
  */
 function rulesScreenVisible() {
   homeWrapper.classList.add('home-container--hide');
@@ -60,7 +57,7 @@ function rulesScreenVisible() {
 }
 
 /**
- * Function to show game screen only
+ * Function to show game screen
  */
 function gameScreenVisible() {
   homeWrapper.classList.add('home-container--hide');
@@ -79,10 +76,7 @@ function backHomeBtnRules() {
 }
 
 /**
- * Function to initialize and start: reset the game level to 0,
- * clear the computer and player's color sequence, update the top status
- * screen, display the start level 01 to the level screen, make the reset
- * button visible, hides start button and proceed to the next level.
+ * Function to initialize and start game.
  */
 function startGame() {
   level = 0;
@@ -96,8 +90,7 @@ function startGame() {
 }
 
 /**
- * Function to advance to the next level: increment the game level by 1,
- * update the level display on the screen, clear the player's input sequence.
+ * Function to advance to the next level.
  */
 function nextLevel() {
   level++;
@@ -108,9 +101,7 @@ function nextLevel() {
 }
 
 /**
- * Function to add a new random color to the computer's sequence:
- * selects a random color from the available options
- * and adds it to the sequence array.
+ * Function to add a new random color to the computer's sequence.
  */
 function addNewColorToSequence() {
   const colors = ['green', 'red', 'yellow', 'blue'];
@@ -123,20 +114,7 @@ function addNewColorToSequence() {
  * @param {string} color - The color whose associated sound should be played.
  */
 function playSound(color) {
-  switch (color) {
-    case 'green':
-      greenSound.play();
-      break;
-    case 'red':
-      redSound.play();
-      break;
-    case 'yellow':
-      yellowSound.play();
-      break;
-    case 'blue':
-      blueSound.play();
-      break;
-  }
+  gameSounds[color].play();
 }
 
 /**
@@ -207,9 +185,6 @@ function resetGame() {
 
 /**
  * Function to navigate back to the home screen from the game screen.
- * This function hides the game screen and rules screen while showing
- * the home screen. Additionally, it reloads the page to reset the game
- * state and clear any ongoing data.
  */
 function backHomeBtnGame() {
   homeWrapper.classList.remove('hide');
@@ -229,7 +204,7 @@ function winnerGame() {
 function gameOver() {
   statusScreen.textContent = 'WRONG SEQUENCE!';
   levelScreen.textContent = 'NO';
-  wrongSound.play();
+  gameSounds.wrong.play();
   setTimeout(() => {
     statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
     levelScreen.textContent = '--';
@@ -251,39 +226,17 @@ resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 rulesHomeBtn.addEventListener('click', backHomeBtnRules);
 
-greenBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  {
+const colorButtons = {
+  green: greenBtn,
+  red: redBtn,
+  yellow: yellowBtn,
+  blue: blueBtn,
+};
+Object.keys(colorButtons).forEach((color) => {
+  const btn = colorButtons[color];
+  btn.addEventListener('click', () => handleColorClick(color));
+  btn.addEventListener('touchstart', (event) => {
     event.preventDefault();
-    handleColorClick('green');
-  }
-});
-redBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  handleColorClick('red');
-});
-yellowBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  handleColorClick('yellow');
-});
-blueBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  handleColorClick('blue');
-});
-
-greenBtn.addEventListener('touchstart', (event) => {
-  event.preventDefault();
-  handleColorClick('green');
-});
-redBtn.addEventListener('touchstart', (event) => {
-  event.preventDefault();
-  handleColorClick('red');
-});
-yellowBtn.addEventListener('touchstart', (event) => {
-  event.preventDefault();
-  handleColorClick('yellow');
-});
-blueBtn.addEventListener('touchstart', (event) => {
-  event.preventDefault();
-  handleColorClick('blue');
+    handleColorClick(color);
+  });
 });
