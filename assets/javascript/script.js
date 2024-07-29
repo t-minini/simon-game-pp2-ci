@@ -37,6 +37,7 @@ let level = 0;
 let computerSequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
+const WINNING_LEVEL = 10;
 
 /**
  * Function to show home screen
@@ -94,10 +95,14 @@ function startGame() {
  */
 function nextLevel() {
   level++;
-  levelScreen.textContent = level.toString().padStart(2, '0');
-  playerSequence = [];
-  addNewColorToSequence();
-  playSequence();
+  if (level >= WINNING_LEVEL) {
+    winnerGame();
+  } else {
+    levelScreen.textContent = level.toString().padStart(2, '0');
+    playerSequence = [];
+    addNewColorToSequence();
+    playSequence();
+  }
 }
 
 /**
@@ -193,9 +198,13 @@ function backHomeBtnGame() {
   location.reload();
 }
 
-// functionality for when player WINS GAME.
+/**
+ * Function for when player wins the game.
+ */
 function winnerGame() {
-  // code here
+  statusScreen.textContent = 'YOU WIN!';
+  levelScreen.textContent = 'WIN';
+  waitingForPlayer = false;
 }
 
 /**
