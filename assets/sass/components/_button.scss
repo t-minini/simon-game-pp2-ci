@@ -8,20 +8,16 @@
   height: 3rem;
   font-size: 1.4rem;
 
-  &--primary {
+  &--main {
     width: 10rem;
     margin: 0 0.5rem;
   }
 
-  // &--secondary {
-  //   width: 6.2rem;
-  // }
-
-  &--tertiary {
+  &--sub {
     width: 7rem;
     background: $color-grey-dark;
 
-    &:hover {
+    &:active {
       background: $color-grey-lighter;
       color: $color-grey-dark;
     }
@@ -30,9 +26,8 @@
       color: $color-grey-light;
       cursor: not-allowed;
 
-      &:hover {
+      &:active {
         background: $color-grey-dark;
-        color: $color-grey-light;
       }
     }
   }
