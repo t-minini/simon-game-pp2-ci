@@ -1,0 +1,51 @@
+@import '../base/animations';
+
+.home-bg {
+  position: absolute;
+  width: 32rem;
+  height: 40rem;
+  border-radius: 0.8rem;
+  pointer-events: none;
+
+  &__top-left,
+  &__top-right,
+  &__bottom-left,
+  &__bottom-right {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    animation: pulse 2s infinite;
+  }
+
+  &__top-left {
+    top: 0;
+    left: 0;
+    border-radius: 0.8rem 0.8rem 8rem 0.8rem;
+    background: $color-green-btn;
+    transform-origin: top left;
+  }
+
+  &__top-right {
+    top: 0;
+    right: 0;
+    border-radius: 0.8rem 0.8rem 0.8rem 8rem;
+    background: $color-red-btn;
+    transform-origin: top right;
+  }
+
+  &__bottom-left {
+    bottom: 0;
+    left: 0;
+    border-radius: 0.8rem 10.6rem 0.8rem 0.8rem;
+    background: $color-yellow-btn;
+    transform-origin: bottom left;
+  }
+
+  &__bottom-right {
+    bottom: 0;
+    right: 0;
+    border-radius: 8rem 0.8rem 0.8rem 0.8rem;
+    background: $color-blue-btn;
+    transform-origin: bottom right;
+  }
+}

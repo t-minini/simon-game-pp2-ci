@@ -263,8 +263,6 @@ This website is developed using the following tools:
 
 **LinkedIn Post Inspector**: Post Inspector can help you identify the data missing on your page, and what you need to add for your content to have better previews in posts.
 
-**ChatGPT**: Assisted in developing the website's text content, providing insights and suggestions that contributed to crafting an engaging and informative website.
-
 **Favicon.io**: A tool that simplifies the creation of website favicons, allowing users to easily generate icons that represent their brand across different platforms and devices.
 
 **pixabay.com/**: to be developed

@@ -95,6 +95,37 @@ body {
   display: none;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: #22c55e;
+  }
+  25% {
+    color: #ef4444;
+  }
+  50% {
+    color: #eab308;
+  }
+  75% {
+    color: #3b82f6;
+  }
+  100% {
+    color: #22c55e;
+  }
+}
 .color-btn {
   width: 13rem;
   height: 13rem;
@@ -195,6 +226,79 @@ body {
   background: #2f2b2f;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: #22c55e;
+  }
+  25% {
+    color: #ef4444;
+  }
+  50% {
+    color: #eab308;
+  }
+  75% {
+    color: #3b82f6;
+  }
+  100% {
+    color: #22c55e;
+  }
+}
+.home-bg {
+  position: absolute;
+  width: 32rem;
+  height: 40rem;
+  border-radius: 0.8rem;
+  pointer-events: none;
+}
+.home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  animation: pulse 2s infinite;
+}
+.home-bg__top-left {
+  top: 0;
+  left: 0;
+  border-radius: 0.8rem 0.8rem 8rem 0.8rem;
+  background: #22c55e;
+  transform-origin: top left;
+}
+.home-bg__top-right {
+  top: 0;
+  right: 0;
+  border-radius: 0.8rem 0.8rem 0.8rem 8rem;
+  background: #ef4444;
+  transform-origin: top right;
+}
+.home-bg__bottom-left {
+  bottom: 0;
+  left: 0;
+  border-radius: 0.8rem 10.6rem 0.8rem 0.8rem;
+  background: #eab308;
+  transform-origin: bottom left;
+}
+.home-bg__bottom-right {
+  bottom: 0;
+  right: 0;
+  border-radius: 8rem 0.8rem 0.8rem 0.8rem;
+  background: #3b82f6;
+  transform-origin: bottom right;
+}
+
 body {
   min-height: 100dvh;
   display: flex;
@@ -280,9 +384,8 @@ body {
   top: 1.5rem;
   right: 1.5rem;
   cursor: pointer;
-}
-.close-icon:hover {
-  color: #3b82f6;
+  font-size: 1.5rem;
+  animation: color-change 4s infinite;
 }
 
 .home-container {
