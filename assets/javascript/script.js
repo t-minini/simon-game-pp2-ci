@@ -66,7 +66,7 @@ function gameScreenVisible() {
   rulesWrapper.classList.add('rules-container--hide');
   gameWrapper.classList.remove('game-container--hide');
   resetBtn.classList.add('hide');
-  blinkSequence(2);
+  flashSequence(2);
 }
 
 /**
@@ -206,7 +206,7 @@ function winnerGame() {
   levelScreen.textContent = '\u{1F3C6}';
   gameSounds.win.play();
   resetBtn.disabled = true;
-  // flashAll();
+  flashAll(2);
   setTimeout(() => {
     statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
     levelScreen.textContent = '--';
@@ -224,7 +224,7 @@ function gameOver() {
   levelScreen.textContent = 'NO';
   resetBtn.disabled = true;
   setTimeout(() => {
-    // flashAll();
+    flashAll(1);
     gameSounds.gameOver.play();
     levelScreen.textContent = '\u{1F480}';
     setTimeout(() => {
@@ -268,10 +268,10 @@ Object.keys(colorButtons).forEach((color) => {
 });
 
 /**
- * Function to blink buttons in sequence
+ * Function to flash buttons in sequence
  * @param {number} rounds - The number of rounds to blink the sequence
  */
-function blinkSequence(rounds) {
+function flashSequence(rounds) {
   const colors = ['green', 'red', 'blue', 'yellow'];
   let currentRound = 0;
   let index = 0;
@@ -294,4 +294,33 @@ function blinkSequence(rounds) {
   setTimeout(() => {
     blink();
   }, 500);
+}
+
+/**
+ * Function to flash all buttons together
+ * @param {number} times - The number of times to flash the buttons
+ */
+function flashAll(times) {
+  const colors = ['green', 'red', 'yellow', 'blue'];
+  let count = 0;
+
+  function flash() {
+    if (count >= times * 2) return;
+
+    colors.forEach((color) => {
+      const button = document.getElementById(`${color}-btn`);
+      button.classList.add('active');
+    });
+
+    setTimeout(() => {
+      colors.forEach((color) => {
+        const button = document.getElementById(`${color}-btn`);
+        button.classList.remove('active');
+      });
+
+      count++;
+      setTimeout(flash, 500);
+    }, 300);
+  }
+  flash();
 }
