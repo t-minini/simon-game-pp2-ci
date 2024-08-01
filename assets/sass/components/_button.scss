@@ -17,11 +17,6 @@
     width: 7rem;
     background: $color-grey-dark;
 
-    &:active {
-      background: $color-grey-lighter;
-      color: $color-grey-dark;
-    }
-
     &:disabled {
       color: $color-grey-light;
       cursor: not-allowed;
