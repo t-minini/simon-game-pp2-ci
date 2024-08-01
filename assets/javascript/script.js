@@ -66,7 +66,7 @@ function gameScreenVisible() {
   rulesWrapper.classList.add('rules-container--hide');
   gameWrapper.classList.remove('game-container--hide');
   resetBtn.classList.add('hide');
-  blinkSequence(2);
+  flashSequence(2);
 }
 
 /**
@@ -271,7 +271,7 @@ Object.keys(colorButtons).forEach((color) => {
  * Function to blink buttons in sequence
  * @param {number} rounds - The number of rounds to blink the sequence
  */
-function blinkSequence(rounds) {
+function flashSequence(rounds) {
   const colors = ['green', 'red', 'blue', 'yellow'];
   let currentRound = 0;
   let index = 0;
