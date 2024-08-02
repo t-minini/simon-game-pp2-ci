@@ -38,7 +38,7 @@ let level = 0;
 let computerSequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
-const WINNING_LEVEL = 2;
+const WINNING_LEVEL = 11;
 
 /**
  * Function to show home screen

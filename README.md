@@ -1,20 +1,26 @@
-# Simon Game <img src="" alt="" height="50">
-
 ## Description
 
-to be developed
+Simon Game is a classic memory game where players need to repeat a sequence of colors and sounds in the correct order. The sequence gets progressively longer and more complex, challenging the player's memory and attention.
 
-![iphone mockup](image path)
-![ipad mockup](image path)
-![macbook mockup](image path)
+![iphone mockup](path_to_iphone_image)
+![ipad mockup](path_to_ipad_image)
+![macbook mockup](path_to_macbook_image)
 
-You can visit the live website [here!](website link)
+You can visit the live website [here!](website_link)
 
-## **User Experience**
+## User Experience
 
-### **Project Goals**
+### Project Goals
 
-### **Target Audience**
+- Provide an engaging and interactive game that challenges the memory of the player.
+- Offer a visually appealing and responsive design suitable for both desktop and mobile users.
+- Ensure a seamless and intuitive user interface.
+
+### Target Audience
+
+- Casual gamers looking for a fun and simple game to play.
+- Individuals seeking to improve their memory and cognitive skills.
+- Fans of classic electronic games.
 
 ## **Design**
 
@@ -126,6 +132,17 @@ In this example:
 
 ## Sass
 
+Sass (Syntactically Awesome Style Sheets) is a CSS pre-processor that adds power and elegance to the basic language. It allows for variables, nested rules, mixins, functions, and more, helping to keep large stylesheets well-organized and easier to maintain.
+
+### Benefits of Sass
+
+1. **Variables:** Store colors, fonts, or any CSS value in variables for easy reuse and management.
+2. **Nesting:** Allows for a cleaner and more readable hierarchy of styles.
+3. **Partials:** Break down CSS into smaller, reusable files.
+4. **Mixins:** Create reusable chunks of code to avoid redundancy.
+5. **Inheritance:** Share a set of CSS properties from one selector to another.
+6. **Built-in Functions:** Provides functions for manipulating colors, math operations, and more.
+
 ## Testing
 
 Responsiveness has been checked and adjusted in Chrome Dev Tools and the site has been viewed on mobiles and desktop without issues and the following browsers:
@@ -136,25 +153,23 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 
 - Firefox
 
-### **HTML Validation (Homepage)**
+### **HTML Validation**
 
 All HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
 ![w3c html validation](img path)
 
-### **CSS Validation (Homepage)**
+### **CSS Validation**
 
 All CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
 ![w3c css validation](img path)
 
-### **Google Lighthouse (Homepage)**
+### **Google Lighthouse**
 
 The lighthouse score results can be found below.
 
 ![google lighthouse](img path)
 
-### **Google Lighthouse (Subscriber Page)**
-
-### **WAVE Accessibility Evaluation (Homepage)**
+### **WAVE Accessibility Evaluation**
 
 The WAVE accessibility evaluation tool results can be found below.
 
@@ -162,10 +177,10 @@ The WAVE accessibility evaluation tool results can be found below.
 
 ### **Manual Testing**
 
-| Features | Expected Outcome | Test Performed | Results | Pass/Fail |
-| -------- | ---------------- | -------------- | ------- | --------- |
-| **Navbar**                                                         |
-| Devon Rex| When clicked, the page should scroll up to the top of the page | Clicked "Devon Rex" in the Navbar| Page scrolled up to the top of the page | Pass      |
+| Features   | Expected Outcome                                               | Test Performed                    | Results                                 | Pass/Fail |
+| ---------- | -------------------------------------------------------------- | --------------------------------- | --------------------------------------- | --------- |
+| **Navbar** |
+| Devon Rex  | When clicked, the page should scroll up to the top of the page | Clicked "Devon Rex" in the Navbar | Page scrolled up to the top of the page | Pass      |
 
 ### **Bugs**
 
@@ -227,9 +242,9 @@ This website is developed using the following technologies:
 
 **CSS**: For styling the website and making it visually appealing.
 
-**SASS**: to be developed
+**SASS**: A CSS pre-processor for writing more maintainable and scalable stylesheets.
 
-**JavaScript**: to be developed
+**JavaScript**: For adding interactivity and dynamic features to the website.
 
 ## Tools Used
 
@@ -289,7 +304,22 @@ This website is deployed using Netlify.
 
 7. **Live Site:** After the deployment process is complete, Netlify will provide you with a unique URL for your live site. You can access your live site by visiting this URL.
 
-### ADD HOW TO CLONE AND ALL THE PACKAGES NEEDED TO BE INSTALLED (NPM)
+## How to Clone the Repository and Install Packages
+
+
+1. **Clone the Repository:**
+
+    ```sh
+    git clone https://github.com/yourusername/your-repository.git
+    cd your-repository
+    ```
+
+2. **Install Dependencies:**
+
+    ```sh
+    npm install
+    ```
+
 
 ## Credits
 
