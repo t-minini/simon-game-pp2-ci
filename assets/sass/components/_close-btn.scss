@@ -6,26 +6,8 @@
   height: 2.1rem;
   cursor: pointer;
   font-size: 1.5rem;
-  animation: color-change 4s infinite;
   background-color: $color-grey-light;
+  color: $color-grey-lighter;
   border: none;
   padding-left: 0.1rem;
-}
-
-@keyframes color-change {
-  0% {
-    color: $color-green-btn;
-  }
-  25% {
-    color: $color-red-btn;
-  }
-  50% {
-    color: $color-yellow-btn;
-  }
-  75% {
-    color: $color-blue-btn;
-  }
-  100% {
-    color: $color-green-btn;
-  }
 }

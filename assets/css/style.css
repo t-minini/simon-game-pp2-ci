@@ -276,29 +276,12 @@ body {
   height: 2.1rem;
   cursor: pointer;
   font-size: 1.5rem;
-  animation: color-change 4s infinite;
   background-color: #3c3e3d;
+  color: #d9d9d9;
   border: none;
   padding-left: 0.1rem;
 }
 
-@keyframes color-change {
-  0% {
-    color: #22c55e;
-  }
-  25% {
-    color: #ef4444;
-  }
-  50% {
-    color: #eab308;
-  }
-  75% {
-    color: #3b82f6;
-  }
-  100% {
-    color: #22c55e;
-  }
-}
 /* below, layout and positioning for main game components, including containers, buttons, and background elements. */
 body {
   min-height: 100dvh;
