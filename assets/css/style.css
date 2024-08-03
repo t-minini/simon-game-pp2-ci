@@ -1,3 +1,4 @@
+/* below, global reset and base styles including box-sizing, font size, and text selection. */
 *,
 *::after,
 *::before {
@@ -14,6 +15,7 @@ body {
   box-sizing: border-box;
 }
 
+/* below, typography styles for headings, status text, rules list, and buttons. */
 .heading-primary--main {
   font-family: "Orbitron", sans-serif;
   font-size: 3.6rem;
@@ -91,41 +93,12 @@ body {
   color: #ffffff;
 }
 
+/* below, utility classes */
 .hide {
   display: none;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes color-change {
-  0% {
-    color: #22c55e;
-  }
-  25% {
-    color: #ef4444;
-  }
-  50% {
-    color: #eab308;
-  }
-  75% {
-    color: #3b82f6;
-  }
-  100% {
-    color: #22c55e;
-  }
-}
+/* below, styles for color buttons, including active states and border settings @ game screen */
 .color-btn {
   width: 13rem;
   height: 13rem;
@@ -167,6 +140,7 @@ body {
   background-color: #9dc0fa;
 }
 
+/* below, style for circular screen @ game screen */
 .level-screen {
   width: 5rem;
   height: 5rem;
@@ -178,6 +152,7 @@ body {
   color: #ed000b;
 }
 
+/* below, style for top screen @ game screen */
 .status-screen {
   width: 100%;
   background: #1c0003;
@@ -191,11 +166,13 @@ body {
   text-align: center;
 }
 
+/* below, styles for the bottom buttons container @ game screen. */
 .bottom-btns {
   width: 100%;
   height: 3rem;
 }
 
+/* below, styles for buttons, including main (home screen) and secondary (game screen) types. */
 .button {
   background: #3c3e3d;
   color: #d9d9d9;
@@ -222,6 +199,39 @@ body {
   background: #2f2b2f;
 }
 
+/* below, styles and animation for the home colored corners @ home screen */
+.home-bg {
+  width: 32rem;
+  height: 40rem;
+  border-radius: 0.8rem;
+  pointer-events: none;
+}
+.home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
+  width: 7rem;
+  height: 7rem;
+  animation: pulse 2s infinite;
+}
+.home-bg__top-left {
+  border-radius: 0.8rem 0.8rem 8rem 0.8rem;
+  background: #22c55e;
+  transform-origin: top left;
+}
+.home-bg__top-right {
+  border-radius: 0.8rem 0.8rem 0.8rem 8rem;
+  background: #ef4444;
+  transform-origin: top right;
+}
+.home-bg__bottom-left {
+  border-radius: 0.8rem 10.6rem 0.8rem 0.8rem;
+  background: #eab308;
+  transform-origin: bottom left;
+}
+.home-bg__bottom-right {
+  border-radius: 8rem 0.8rem 0.8rem 0.8rem;
+  background: #3b82f6;
+  transform-origin: bottom right;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -236,6 +246,42 @@ body {
     opacity: 1;
   }
 }
+/* below, style for mute/unmute button @ game screen */
+.sound-btns {
+  background: none;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+}
+.sound-btns__icon {
+  width: 100%;
+  height: 100%;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+.sound-btns__icon--red {
+  background-color: #ef4444;
+  border: 3px solid #ef1b44;
+}
+.sound-btns__icon--green {
+  background-color: #22c55e;
+  border: 3px solid #22b85e;
+  display: none;
+}
+
+/* below, styles and animation for the close button @ rules screen */
+.close-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  animation: color-change 4s infinite;
+  background-color: #3c3e3d;
+  border: none;
+  padding-left: 0.1rem;
+}
+
 @keyframes color-change {
   0% {
     color: #22c55e;
@@ -253,61 +299,7 @@ body {
     color: #22c55e;
   }
 }
-.home-bg {
-  position: absolute;
-  width: 32rem;
-  height: 40rem;
-  border-radius: 0.8rem;
-  pointer-events: none;
-}
-.home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
-  position: absolute;
-  width: 7rem;
-  height: 7rem;
-  animation: pulse 2s infinite;
-}
-.home-bg__top-left {
-  top: 0;
-  left: 0;
-  border-radius: 0.8rem 0.8rem 8rem 0.8rem;
-  background: #22c55e;
-  transform-origin: top left;
-}
-.home-bg__top-right {
-  top: 0;
-  right: 0;
-  border-radius: 0.8rem 0.8rem 0.8rem 8rem;
-  background: #ef4444;
-  transform-origin: top right;
-}
-.home-bg__bottom-left {
-  bottom: 0;
-  left: 0;
-  border-radius: 0.8rem 10.6rem 0.8rem 0.8rem;
-  background: #eab308;
-  transform-origin: bottom left;
-}
-.home-bg__bottom-right {
-  bottom: 0;
-  right: 0;
-  border-radius: 8rem 0.8rem 0.8rem 0.8rem;
-  background: #3b82f6;
-  transform-origin: bottom right;
-}
-
-.sound-btns {
-  position: absolute;
-  bottom: 0;
-  right: 2rem;
-  background: none;
-  border: none;
-}
-.sound-btns__icon {
-  width: 10rem;
-  height: 10rem;
-  cursor: pointer;
-}
-
+/* below, layout and positioning for main game components, including containers, buttons, and background elements. */
 body {
   min-height: 100dvh;
   display: flex;
@@ -386,20 +378,18 @@ body {
   margin-top: 1rem;
 }
 
-.close-icon {
-  background: none;
-  border: none;
+.sound-btns {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  animation: color-change 4s infinite;
+  bottom: -4rem;
+  right: 0rem;
+}
+.sound-btns__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .home-container {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -410,8 +400,6 @@ body {
 }
 
 .rules-container {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -423,12 +411,59 @@ body {
 }
 
 .game-container {
-  height: 100%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.game-container--hide {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.game-container--hide {
-  display: none;
+
+.home-bg {
+  position: absolute;
+}
+.home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
+  position: absolute;
+}
+.home-bg__top-left {
+  top: 0;
+  left: 0;
+}
+.home-bg__top-right {
+  top: 0;
+  right: 0;
+}
+.home-bg__bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.home-bg__bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* below, styles for home, rules, and game containers. */
+.home-container {
+  height: 100%;
+  width: 100%;
+}
+
+.rules-container {
+  height: 100%;
+  width: 100%;
+}
+
+.game-container {
+  height: 100%;
+  width: 100%;
 }

@@ -1,4 +1,5 @@
-// @import './../settings/typography';
+/* below, layout and positioning for main game components, including containers, buttons, and background elements. */
+@import '../settings/colors';
 
 body {
   min-height: 100dvh;
@@ -36,8 +37,6 @@ body {
 }
 
 .game-btns {
-  // width: 100%;
-  // height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -63,8 +62,6 @@ body {
 
 .level-screen {
   position: absolute;
-  // left: calc(50% - (4.5rem / 2));
-  // top: calc(50% - (4.5rem / 2));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,13 +81,88 @@ body {
   margin-top: 1rem;
 }
 
-.close-icon {
-  background: none;
-  border: none;
+.sound-btns {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  animation: color-change 4s infinite;
+  bottom: -4rem;
+  right: 0rem;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.rules-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &--hide {
+    display: none;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-bg {
+  position: absolute;
+
+  &__top-left,
+  &__top-right,
+  &__bottom-left,
+  &__bottom-right {
+    position: absolute;
+  }
+
+  &__top-left {
+    top: 0;
+    left: 0;
+  }
+
+  &__top-right {
+    top: 0;
+    right: 0;
+  }
+
+  &__bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+
+  &__bottom-right {
+    bottom: 0;
+    right: 0;
+  }
 }

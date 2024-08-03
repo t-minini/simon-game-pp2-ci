@@ -5,7 +5,7 @@ let rulesBtn = document.getElementById('rules-btn');
 
 // RULES SCREEN ELEMENTS
 let rulesWrapper = document.getElementById('rules-container');
-let closeIcon = document.getElementById('close-icon');
+let closeBtn = document.getElementById('close-btn');
 
 // GAME SCREEN ELEMENTS
 let gameWrapper = document.getElementById('game-container');
@@ -253,7 +253,7 @@ playBtn.addEventListener('click', gameScreenVisible);
 startBtn.addEventListener('click', startGame);
 resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
-closeIcon.addEventListener('click', backHomeBtnRules);
+closeBtn.addEventListener('click', backHomeBtnRules);
 
 // Color button event listeners
 const colorButtons = {
