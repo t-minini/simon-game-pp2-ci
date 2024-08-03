@@ -1,23 +1,26 @@
 // HOME SCREEN ELEMENTS
-let homeWrapper = document.getElementById('home-container');
-let playBtn = document.getElementById('play-btn');
-let rulesBtn = document.getElementById('rules-btn');
+const homeWrapper = document.getElementById('home-container');
+const playBtn = document.getElementById('play-btn');
+const rulesBtn = document.getElementById('rules-btn');
 
 // RULES SCREEN ELEMENTS
-let rulesWrapper = document.getElementById('rules-container');
-let closeBtn = document.getElementById('close-btn');
+const rulesWrapper = document.getElementById('rules-container');
+const closeBtn = document.getElementById('close-btn');
 
 // GAME SCREEN ELEMENTS
-let gameWrapper = document.getElementById('game-container');
-let statusScreen = document.getElementById('status-screen-text');
-let levelScreen = document.getElementById('level-screen-number');
-let greenBtn = document.getElementById('green-btn');
-let redBtn = document.getElementById('red-btn');
-let yellowBtn = document.getElementById('yellow-btn');
-let blueBtn = document.getElementById('blue-btn');
-let gameHomeBtn = document.getElementById('home-btn');
-let startBtn = document.getElementById('start-btn');
-let resetBtn = document.getElementById('reset-btn');
+const gameWrapper = document.getElementById('game-container');
+const statusScreen = document.getElementById('status-screen-text');
+const levelScreen = document.getElementById('level-screen-number');
+const greenBtn = document.getElementById('green-btn');
+const redBtn = document.getElementById('red-btn');
+const yellowBtn = document.getElementById('yellow-btn');
+const blueBtn = document.getElementById('blue-btn');
+const gameHomeBtn = document.getElementById('home-btn');
+const startBtn = document.getElementById('start-btn');
+const resetBtn = document.getElementById('reset-btn');
+const soundBtns = document.getElementById('sound-btns');
+const soundOffIcon = document.getElementById('sound-off');
+const soundOnIcon = document.getElementById('sound-on');
 
 // GAME SOUNDS
 const gameSounds = {
@@ -38,10 +41,12 @@ let level = 0;
 let computerSequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
-const WINNING_LEVEL = 2;
+let isMuted = false;
+const WINNING_LEVEL = 11;
 
+// NAVIGATION LOGIC STARTS HERE
 /**
- * Function to show home screen
+ * Show home screen
  */
 function homeScreenVisible() {
   homeWrapper.classList.remove('home-container--hide');
@@ -50,7 +55,7 @@ function homeScreenVisible() {
 }
 
 /**
- * Function to show rules screen
+ * Show rules screen
  */
 function rulesScreenVisible() {
   homeWrapper.classList.add('home-container--hide');
@@ -59,7 +64,7 @@ function rulesScreenVisible() {
 }
 
 /**
- * Function to show game screen
+ * Show game screen
  */
 function gameScreenVisible() {
   homeWrapper.classList.add('home-container--hide');
@@ -70,7 +75,7 @@ function gameScreenVisible() {
 }
 
 /**
- * Function to return home from rules screen
+ * Navigate back to home screen from rules screen
  */
 function backHomeBtnRules() {
   homeWrapper.classList.remove('home-container--hide');
@@ -79,7 +84,18 @@ function backHomeBtnRules() {
 }
 
 /**
- * Function to initialize and start the game
+ * Navigate back to the home screen from the game screen
+ */
+function backHomeBtnGame() {
+  homeWrapper.classList.remove('hide');
+  rulesWrapper.classList.add('hide');
+  gameWrapper.classList.add('hide');
+  location.reload();
+}
+
+// GAME LOGIC STARTS HERE
+/**
+ * Initialize and start the game
  */
 function startGame() {
   level = 0;
@@ -93,7 +109,7 @@ function startGame() {
 }
 
 /**
- * Function to advance to the next level
+ * Advance to the next game level
  */
 function nextLevel() {
   level++;
@@ -108,7 +124,7 @@ function nextLevel() {
 }
 
 /**
- * Function to add a new random color to the computer's sequence
+ * Add a new random color to the computer's sequence
  */
 function addNewColorToSequence() {
   const colors = ['green', 'red', 'yellow', 'blue'];
@@ -117,7 +133,7 @@ function addNewColorToSequence() {
 }
 
 /**
- * Function to play the sound associated with a color
+ * Play the sound associated with a color
  * @param {string} color - The color whose associated sound should be played
  */
 function playSound(color) {
@@ -127,7 +143,7 @@ function playSound(color) {
 }
 
 /**
- * Function to flash the buttons
+ * Flash the buttons
  */
 function flashButton(color) {
   const button = document.getElementById(`${color}-btn`);
@@ -138,7 +154,7 @@ function flashButton(color) {
 }
 
 /**
- * Function to play the computer sequence of colors to the player
+ * Play the computer sequence of colors to the player
  */
 function playSequence() {
   waitingForPlayer = false;
@@ -159,7 +175,7 @@ function playSequence() {
 }
 
 /**
- * Handles the click event for a color button
+ * Handle the click event for a color button
  * @param {string} color - The color of the button that was clicked
  */
 function handleColorClick(color) {
@@ -186,24 +202,14 @@ function handleColorClick(color) {
 }
 
 /**
- * Function to reset the game to its initial state
+ * Reset the game to its initial state
  */
 function resetGame() {
   startGame();
 }
 
 /**
- * Function to navigate back to the home screen from the game screen
- */
-function backHomeBtnGame() {
-  homeWrapper.classList.remove('hide');
-  rulesWrapper.classList.add('hide');
-  gameWrapper.classList.add('hide');
-  location.reload();
-}
-
-/**
- * Function for when the player wins the game
+ * Player wins the game
  */
 function winnerGame() {
   statusScreen.textContent = 'CONGRATULATIONS, YOU WIN!';
@@ -223,7 +229,7 @@ function winnerGame() {
 }
 
 /**
- * Function to handle the game over state when the player makes an incorrect move
+ * Player looses the game
  */
 function gameOver() {
   statusScreen.textContent = 'WRONG SEQUENCE!';
@@ -245,38 +251,8 @@ function gameOver() {
   waitingForPlayer = false;
 }
 
-// EVENT LISTENERS
-// Show home screen on page load
-window.addEventListener('DOMContentLoaded', () => {
-  homeScreenVisible();
-});
-
-// Button event listeners
-rulesBtn.addEventListener('click', rulesScreenVisible);
-playBtn.addEventListener('click', gameScreenVisible);
-startBtn.addEventListener('click', startGame);
-resetBtn.addEventListener('click', resetGame);
-gameHomeBtn.addEventListener('click', backHomeBtnGame);
-closeBtn.addEventListener('click', backHomeBtnRules);
-
-// Color button event listeners
-const colorButtons = {
-  green: greenBtn,
-  red: redBtn,
-  yellow: yellowBtn,
-  blue: blueBtn,
-};
-Object.keys(colorButtons).forEach((color) => {
-  const btn = colorButtons[color];
-  btn.addEventListener('click', () => handleColorClick(color));
-  btn.addEventListener('touchstart', (event) => {
-    event.preventDefault();
-    handleColorClick(color);
-  });
-});
-
 /**
- * Function to flash buttons in sequence
+ * Flash buttons in sequence
  * @param {number} rounds - The number of rounds to blink the sequence
  */
 function flashSequence(rounds) {
@@ -305,7 +281,7 @@ function flashSequence(rounds) {
 }
 
 /**
- * Function to flash all buttons together
+ * Flash all buttons together
  * @param {number} times - The number of times to flash the buttons
  */
 function flashAll(times) {
@@ -333,13 +309,11 @@ function flashAll(times) {
   flash();
 }
 
-let isMuted = false;
-
+/**
+ * Mute and Unmute Buttons
+ */
 function toggleMute() {
   isMuted = !isMuted;
-
-  const soundOffIcon = document.getElementById('sound-off');
-  const soundOnIcon = document.getElementById('sound-on');
 
   if (isMuted) {
     soundOffIcon.style.display = 'none';
@@ -350,4 +324,30 @@ function toggleMute() {
   }
 }
 
+// EVENT LISTENERS
+window.addEventListener('DOMContentLoaded', () => {
+  homeScreenVisible();
+});
+rulesBtn.addEventListener('click', rulesScreenVisible);
+playBtn.addEventListener('click', gameScreenVisible);
+startBtn.addEventListener('click', startGame);
+resetBtn.addEventListener('click', resetGame);
+gameHomeBtn.addEventListener('click', backHomeBtnGame);
+closeBtn.addEventListener('click', backHomeBtnRules);
 document.getElementById('sound-btns').addEventListener('click', toggleMute);
+
+// Color button event listeners
+const colorButtons = {
+  green: greenBtn,
+  red: redBtn,
+  yellow: yellowBtn,
+  blue: blueBtn,
+};
+Object.keys(colorButtons).forEach((color) => {
+  const btn = colorButtons[color];
+  btn.addEventListener('click', () => handleColorClick(color));
+  btn.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    handleColorClick(color);
+  });
+});
