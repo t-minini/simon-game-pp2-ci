@@ -38,7 +38,7 @@ let level = 0;
 let computerSequence = [];
 let playerSequence = [];
 let waitingForPlayer = false;
-const WINNING_LEVEL = 11;
+const WINNING_LEVEL = 2;
 
 /**
  * Function to show home screen
@@ -208,7 +208,9 @@ function backHomeBtnGame() {
 function winnerGame() {
   statusScreen.textContent = 'CONGRATULATIONS, YOU WIN!';
   levelScreen.textContent = '\u{1F3C6}';
-  gameSounds.win.play();
+  if (!isMuted) {
+    gameSounds.win.play();
+  }
   resetBtn.disabled = true;
   flashAll(2);
   setTimeout(() => {
@@ -229,7 +231,9 @@ function gameOver() {
   resetBtn.disabled = true;
   setTimeout(() => {
     flashAll(1);
-    gameSounds.gameOver.play();
+    if (!isMuted) {
+      gameSounds.gameOver.play();
+    }
     levelScreen.textContent = '\u{1F480}';
     setTimeout(() => {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
