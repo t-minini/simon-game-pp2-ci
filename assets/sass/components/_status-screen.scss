@@ -1,5 +1,6 @@
 /* below, style for top screen @ game screen */
 @import '../settings/colors';
+@import '../utils/breakpoints';
 
 .status-screen {
   width: 100%;
@@ -7,6 +8,11 @@
   border: 0.3rem solid $color-grey-dark;
   border-radius: 0.8rem;
   min-height: 3rem;
+
+  @include breakpoint(tablet) {
+    min-height: 4rem;
+    border-width: 0.6rem;
+  }
 
   &__text {
     width: 100%;

@@ -1,5 +1,6 @@
 /* below, style for circular screen @ game screen */
 @import '../settings/colors';
+@import '../utils/breakpoints';
 
 .level-screen {
   width: 5rem;
@@ -7,6 +8,12 @@
   background: $color-grey-darker;
   border: 0.3rem solid $color-grey-dark;
   border-radius: 50%;
+
+  @include breakpoint(tablet) {
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.6rem;
+  }
 
   &__text {
     color: $color-red;

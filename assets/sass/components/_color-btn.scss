@@ -1,10 +1,17 @@
 /* below, styles for color buttons, including active states and border settings @ game screen */
 @import './../settings/colors';
+@import '../utils/breakpoints';
 
 .color-btn {
   width: 13rem;
   height: 13rem;
   border: 0.6rem solid;
+
+  @include breakpoint(tablet) {
+    width: 21rem;
+    height: 21rem;
+    border-width: 1rem;
+  }
 
   &:hover {
     cursor: pointer;

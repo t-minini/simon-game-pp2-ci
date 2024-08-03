@@ -1,17 +1,9 @@
 // below, breakpoints
-@import './../settings/breakpoints';
+@import '../settings/breakpoints';
 
 @mixin breakpoint($point) {
-  @if ($point == mobile) {
-    @media only screen and (min-width: #{mobile}) {
-      @content;
-    }
-  } @else if ($point == tablet) {
-    @media only screen and (min-width: #{tablet}) {
-      @content;
-    }
-  } @else if ($point == desktop) {
-    @media only screen and (min-width: #{desktop}) {
+  @if ($point == tablet) {
+    @media only screen and (min-width: #{$tablet}) {
       @content;
     }
   }

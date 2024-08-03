@@ -1,5 +1,6 @@
 /* below, styles for buttons, including main (home screen) and secondary (game screen) types. */
 @import '../settings/colors';
+@import '../utils/breakpoints';
 
 .button {
   background: $color-grey-light;
@@ -10,15 +11,31 @@
   cursor: pointer;
   height: 3rem;
   font-size: 1.4rem;
+  padding-top: 0.1rem;
+
+  @include breakpoint(tablet) {
+    height: 4rem;
+    font-size: 1.8rem;
+    padding-top: 0.2rem;
+  }
 
   &--main {
     width: 10rem;
     margin: 0 0.5rem;
+
+    @include breakpoint(tablet) {
+      width: 12rem;
+      margin: 0 0.8rem;
+    }
   }
 
   &--sub {
     width: 7rem;
     background: $color-grey-dark;
+
+    @include breakpoint(tablet) {
+      width: 9rem;
+    }
 
     &:disabled {
       color: $color-grey-light;

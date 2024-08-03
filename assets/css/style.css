@@ -23,11 +23,22 @@ body {
   font-weight: bold;
   color: #2f2b2f;
 }
+@media only screen and (min-width: 768px) {
+  .heading-primary--main {
+    font-size: 5rem;
+    letter-spacing: 0.7rem;
+  }
+}
 .heading-primary--sub {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
   color: #2f2b2f;
+}
+@media only screen and (min-width: 768px) {
+  .heading-primary--sub {
+    font-size: 1.9rem;
+  }
 }
 
 .heading-secondary {
@@ -53,12 +64,36 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
 }
+@media only screen and (min-width: 768px) {
+  .heading-tertiary {
+    font-size: 2.2rem;
+    letter-spacing: 0.5rem;
+  }
+}
 
 .status-screen__text {
   font-family: "Orbitron", sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 0.12rem;
+}
+@media only screen and (min-width: 768px) {
+  .status-screen__text {
+    font-size: 1.8rem;
+    letter-spacing: 0.16rem;
+  }
+}
+
+.level-screen__text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.9rem;
+  line-height: 1.9rem;
+}
+@media only screen and (min-width: 768px) {
+  .level-screen__text {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+  }
 }
 
 .rules-list {
@@ -81,11 +116,6 @@ body {
   padding-bottom: 0;
 }
 
-.level-screen__text {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.9rem;
-}
-
 .btn--sub {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
@@ -98,11 +128,86 @@ body {
   display: none;
 }
 
+/* below, styles for the bottom buttons container @ game screen. */
+.bottom-btns {
+  width: 100%;
+  height: 3rem;
+}
+@media only screen and (min-width: 768px) {
+  .bottom-btns {
+    height: 4rem;
+  }
+}
+
+/* below, styles for buttons, including main (home screen) and secondary (game screen) types. */
+.button {
+  background: #3c3e3d;
+  color: #d9d9d9;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  height: 3rem;
+  font-size: 1.4rem;
+  padding-top: 0.1rem;
+}
+@media only screen and (min-width: 768px) {
+  .button {
+    height: 4rem;
+    font-size: 1.8rem;
+    padding-top: 0.2rem;
+  }
+}
+.button--main {
+  width: 10rem;
+  margin: 0 0.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .button--main {
+    width: 12rem;
+    margin: 0 0.8rem;
+  }
+}
+.button--sub {
+  width: 7rem;
+  background: #2f2b2f;
+}
+@media only screen and (min-width: 768px) {
+  .button--sub {
+    width: 9rem;
+  }
+}
+.button--sub:disabled {
+  color: #3c3e3d;
+  cursor: not-allowed;
+}
+.button--sub:disabled:active {
+  background: #2f2b2f;
+}
+
+/* below, styles and animation for the close button @ rules screen */
+.close-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: #3c3e3d;
+  color: #d9d9d9;
+  border: none;
+}
+
 /* below, styles for color buttons, including active states and border settings @ game screen */
 .color-btn {
   width: 13rem;
   height: 13rem;
   border: 0.6rem solid;
+}
+@media only screen and (min-width: 768px) {
+  .color-btn {
+    width: 21rem;
+    height: 21rem;
+    border-width: 1rem;
+  }
 }
 .color-btn:hover {
   cursor: pointer;
@@ -140,76 +245,29 @@ body {
   background-color: #9dc0fa;
 }
 
-/* below, style for circular screen @ game screen */
-.level-screen {
-  width: 5rem;
-  height: 5rem;
-  background: #1c0003;
-  border: 0.3rem solid #2f2b2f;
-  border-radius: 50%;
-}
-.level-screen__text {
-  color: #ed000b;
-}
-
-/* below, style for top screen @ game screen */
-.status-screen {
-  width: 100%;
-  background: #1c0003;
-  border: 0.3rem solid #2f2b2f;
-  border-radius: 0.8rem;
-  min-height: 3rem;
-}
-.status-screen__text {
-  width: 100%;
-  color: #ed000b;
-  text-align: center;
-}
-
-/* below, styles for the bottom buttons container @ game screen. */
-.bottom-btns {
-  width: 100%;
-  height: 3rem;
-}
-
-/* below, styles for buttons, including main (home screen) and secondary (game screen) types. */
-.button {
-  background: #3c3e3d;
-  color: #d9d9d9;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  height: 3rem;
-  font-size: 1.4rem;
-}
-.button--main {
-  width: 10rem;
-  margin: 0 0.5rem;
-}
-.button--sub {
-  width: 7rem;
-  background: #2f2b2f;
-}
-.button--sub:disabled {
-  color: #3c3e3d;
-  cursor: not-allowed;
-}
-.button--sub:disabled:active {
-  background: #2f2b2f;
-}
-
 /* below, styles and animation for the home colored corners @ home screen */
 .home-bg {
-  width: 32rem;
-  height: 40rem;
+  width: 31rem;
+  height: 39rem;
   border-radius: 0.8rem;
   pointer-events: none;
+}
+@media only screen and (min-width: 768px) {
+  .home-bg {
+    width: 50rem;
+    height: 62rem;
+  }
 }
 .home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
   width: 7rem;
   height: 7rem;
   animation: pulse 2s infinite;
+}
+@media only screen and (min-width: 768px) {
+  .home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 .home-bg__top-left {
   border-radius: 0.8rem 0.8rem 8rem 0.8rem;
@@ -246,6 +304,25 @@ body {
     opacity: 1;
   }
 }
+/* below, style for circular screen @ game screen */
+.level-screen {
+  width: 5rem;
+  height: 5rem;
+  background: #1c0003;
+  border: 0.3rem solid #2f2b2f;
+  border-radius: 50%;
+}
+@media only screen and (min-width: 768px) {
+  .level-screen {
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.6rem;
+  }
+}
+.level-screen__text {
+  color: #ed000b;
+}
+
 /* below, style for mute/unmute button @ game screen */
 .sound-btns {
   background: none;
@@ -270,15 +347,24 @@ body {
   display: none;
 }
 
-/* below, styles and animation for the close button @ rules screen */
-.close-btn {
-  width: 2.1rem;
-  height: 2.1rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  background-color: #3c3e3d;
-  color: #d9d9d9;
-  border: none;
+/* below, style for top screen @ game screen */
+.status-screen {
+  width: 100%;
+  background: #1c0003;
+  border: 0.3rem solid #2f2b2f;
+  border-radius: 0.8rem;
+  min-height: 3rem;
+}
+@media only screen and (min-width: 768px) {
+  .status-screen {
+    min-height: 4rem;
+    border-width: 0.6rem;
+  }
+}
+.status-screen__text {
+  width: 100%;
+  color: #ed000b;
+  text-align: center;
 }
 
 /* below, layout and positioning for main game components, including containers, buttons, and background elements. */
@@ -300,6 +386,12 @@ body {
   justify-content: center;
   border-radius: 0.8rem;
 }
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 52rem;
+    height: 64rem;
+  }
+}
 
 .home-btns {
   margin-top: 3rem;
@@ -316,6 +408,13 @@ body {
   align-items: center;
   padding: 1rem;
 }
+@media only screen and (min-width: 768px) {
+  .game-bg {
+    width: 48rem;
+    height: 60rem;
+    padding: 2rem;
+  }
+}
 
 .game-btns {
   display: grid;
@@ -323,6 +422,12 @@ body {
   grid-template-rows: repeat(2, 1fr);
   column-gap: 1rem;
   row-gap: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .game-btns {
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
 }
 
 .heading-primary {
@@ -352,12 +457,22 @@ body {
   justify-content: center;
   margin-bottom: 1rem;
 }
+@media only screen and (min-width: 768px) {
+  .status-screen {
+    margin-bottom: 2rem;
+  }
+}
 
 .bottom-btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .bottom-btns {
+    margin-top: 2rem;
+  }
 }
 
 .sound-btns {

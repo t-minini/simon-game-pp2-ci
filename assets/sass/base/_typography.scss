@@ -1,6 +1,7 @@
 /* below, typography styles for headings, status text, rules list, and buttons. */
-@import './../settings/fonts';
-@import './../settings/colors';
+@import '../settings/fonts';
+@import '../settings/colors';
+@import '../utils/breakpoints';
 
 .heading-primary {
   &--main {
@@ -9,6 +10,11 @@
     letter-spacing: 0.4rem;
     font-weight: bold;
     color: $color-grey-dark;
+
+    @include breakpoint(tablet) {
+      font-size: 5rem;
+      letter-spacing: 0.7rem;
+    }
   }
 
   &--sub {
@@ -16,6 +22,10 @@
     font-size: 1.6rem;
     font-weight: 300;
     color: $color-grey-dark;
+
+    @include breakpoint(tablet) {
+      font-size: 1.9rem;
+    }
   }
 }
 
@@ -42,6 +52,11 @@
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: rgba($color-white, 0.2);
+
+  @include breakpoint(tablet) {
+    font-size: 2.2rem;
+    letter-spacing: 0.5rem;
+  }
 }
 
 .status-screen {
@@ -50,6 +65,24 @@
     font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: 0.12rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.8rem;
+      letter-spacing: 0.16rem;
+    }
+  }
+}
+
+.level-screen {
+  &__text {
+    font-family: $orbitron;
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+
+    @include breakpoint(tablet) {
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+    }
   }
 }
 
@@ -73,13 +106,6 @@
 
   &__item:last-child {
     padding-bottom: 0;
-  }
-}
-
-.level-screen {
-  &__text {
-    font-family: $orbitron;
-    font-size: 1.9rem;
   }
 }
 

@@ -1,11 +1,17 @@
 /* below, styles and animation for the home colored corners @ home screen */
 @import '../settings/colors';
+@import '../utils/breakpoints';
 
 .home-bg {
-  width: 32rem;
-  height: 40rem;
+  width: 31rem;
+  height: 39rem;
   border-radius: 0.8rem;
   pointer-events: none;
+
+  @include breakpoint(tablet) {
+    width: 50rem;
+    height: 62rem;
+  }
 
   &__top-left,
   &__top-right,
@@ -14,6 +20,11 @@
     width: 7rem;
     height: 7rem;
     animation: pulse 2s infinite;
+
+    @include breakpoint(tablet) {
+      width: 10rem;
+      height: 10rem;
+    }
   }
 
   &__top-left {
