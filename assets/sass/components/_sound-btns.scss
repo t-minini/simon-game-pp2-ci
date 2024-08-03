@@ -1,0 +1,13 @@
+.sound-btns {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  background: none;
+  border: none;
+
+  &__icon {
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+  }
+}

@@ -295,6 +295,19 @@ body {
   transform-origin: bottom right;
 }
 
+.sound-btns {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  background: none;
+  border: none;
+}
+.sound-btns__icon {
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+}
+
 body {
   min-height: 100dvh;
   display: flex;

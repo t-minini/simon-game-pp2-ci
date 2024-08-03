@@ -187,7 +187,7 @@ The WAVE accessibility evaluation tool results can be found below.
 ### 1. Sound not working
 
 **Description:**  
-to be developed
+after the first round, if a color button is clicked multiple times, the game goes to "game over" and resets automatically.
 
 <details>
 <summary> Click to see images </summary>
@@ -228,6 +228,12 @@ After:
 ```html
 <link rel="stylesheet" href="assets/css/style.css" />
 <img src="assets/images/cat-hero.webp" alt="yellow devon rex cat sitting" />
+```
+
+
+```javascript
+// If the player clicks more buttons than the length of the computer sequence, ignore the click
+  if (playerSequence.length >= computerSequence.length) return;
 ```
 
 ### **Test Final Review**

@@ -121,7 +121,9 @@ function addNewColorToSequence() {
  * @param {string} color - The color whose associated sound should be played
  */
 function playSound(color) {
-  gameSounds[color].play();
+  if (!isMuted) {
+    gameSounds[color].play();
+  }
 }
 
 /**
@@ -326,3 +328,22 @@ function flashAll(times) {
   }
   flash();
 }
+
+let isMuted = false;
+
+function toggleMute() {
+  isMuted = !isMuted;
+
+  const soundOffIcon = document.getElementById('sound-off');
+  const soundOnIcon = document.getElementById('sound-on');
+
+  if (isMuted) {
+    soundOffIcon.style.display = 'none';
+    soundOnIcon.style.display = 'block';
+  } else {
+    soundOffIcon.style.display = 'block';
+    soundOnIcon.style.display = 'none';
+  }
+}
+
+document.getElementById('sound-btns').addEventListener('click', toggleMute);
