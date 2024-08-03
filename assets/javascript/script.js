@@ -163,6 +163,8 @@ function playSequence() {
 function handleColorClick(color) {
   if (!waitingForPlayer) return;
 
+  if (playerSequence.length >= computerSequence.length) return;
+
   playerSequence.push(color);
   playSound(color);
   flashButton(color);
