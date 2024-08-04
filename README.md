@@ -10,15 +10,29 @@ Simon Game is a classic memory game where players need to repeat a sequence of c
 
 You can visit the live website [here!](https://simon-game-pp2-ci.netlify.app/)
 
+## History of the Simon Game
+
+The Simon game was created by Ralph H. Baer and Howard J. Morrison in 1978 and was first introduced as a handheld electronic game by Milton Bradley. It quickly became a classic in the world of electronic entertainment. The game is named after the popular children's game "Simon Says," where players follow a sequence of actions based on auditory and visual prompts.
+
+#### **How It Works**
+
+In Simon, the game consists of four colored buttons (red, blue, green, and yellow) that light up in a specific sequence. The player must repeat the sequence by pressing the buttons in the same order. As the game progresses, the sequences become longer and more complex. The game challenges memory and reaction skills, making it both engaging and challenging.
+
+#### **Legacy**
+
+The original Simon game was notable for its use of light and sound to create a simple yet captivating gameplay experience. Its design principles have influenced many similar memory and rhythm-based games over the years. The game's enduring popularity has led to numerous variations and adaptations across various platforms, from handheld devices to mobile apps and even virtual reality.
+
+<img src="./assets/images/classic-simon-game.webp" alt="classic simon game"/>
+
 ## User Experience
 
-### Project Goals
+#### Project Goals
 
 - Provide an engaging and interactive game that challenges the memory of the player.
 - Offer a visually appealing and responsive design suitable for both desktop and mobile users.
 - Ensure a seamless and intuitive user interface.
 
-### Target Audience
+#### Target Audience
 
 - Casual gamers looking for a fun and simple game to play.
 - Individuals seeking to improve their memory and cognitive skills.
@@ -26,13 +40,14 @@ You can visit the live website [here!](https://simon-game-pp2-ci.netlify.app/)
 
 ## **Design**
 
-### **Colours**
+#### **Colours**
 
 ![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-one.webp)
 ![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-two.webp)
 ![Coolors Palette](./assets/images/code-institute-pp2.webp)
 
-### **Typography**
+#### **Typography**
+
 - All icons were sourced through [Iconify](https://www.figma.com/community/plugin/735098390272716381/iconify) Figma plugin
 - All fonts were sourced through [Google Fonts](https://fonts.google.com/)
 - [Roboto](https://fonts.google.com/specimen/Roboto)
@@ -41,40 +56,40 @@ You can visit the live website [here!](https://simon-game-pp2-ci.netlify.app/)
 ![roboto google fonts](./assets/images/roboto-google-fonts.webp)
 ![orbitron google fonts](./assets/images/orbitron-google-fonts.webp)
 
-### **Wireframe and Prototype**
+#### **Wireframe and Prototype**
 
-### [Balsamiq](https://balsamiq.com/) wireframe:
+##### [Balsamiq](https://balsamiq.com/) wireframe:
 
 <details>
 <summary> Open for desktop wireframe </summary>
 
-<img src="./assets/images/balsamic-wireframe-desktop.webp" alt="balsamiq wireframe" style="width: 100%; max-width: 500px;" />
+<img src="./assets/images/balsamic-wireframe-desktop.webp" alt="balsamiq wireframe" style="width: 400px;" />
 
 </details>
 
 <details>
 <summary> Open for mobile wireframe </summary>
 
-<img src="./assets/images/balsamic-wireframe-mobile.webp" alt="balsamiq wireframe" style="width: 100%; max-width: 600px;" />
+<img src="./assets/images/balsamic-wireframe-mobile.webp" alt="balsamiq wireframe" style="width: 300px;" />
 
 </details>
 
-### [Figma](https://www.figma.com/) prototype:
+##### [Figma](https://www.figma.com/) prototype:
 
 <details>
 <summary> Open for desktop prototype </summary>
 
-<img src="./assets/images/figma-prototype.webp" alt="figma prototype" style="width: 100%; max-width: 300px;" />
+<img src="./assets/images/figma-prototype.webp" alt="figma prototype" style="width: 300px;" />
 
 </details>
 
 ## Features
 
-### **Meta Tags and Optimization**
+#### **Meta Tags and Optimization**
 
 The <head> section of the Simon Game website includes essential meta tags for SEO and social media sharing. The meta description provides a summary for search engines, while the keywords tag helps search engines understand the site content. The Open Graph URL tag defines the canonical URL for social media, and the author tag credits Tulio Minini. The Open Graph title and image tags set the title and image for social media sharing, ensuring the content is attractive and informative when shared on platforms like Facebook and Twitter.
 
-### **Home Screen**
+#### **Home Screen**
 
 The Home Screen serves as the main entry point for the application. It features a "Play" button to navigate users to the Game screen and a "Rules" button that navigates users to the Rules Screen. The layout includes introductory elements and the game title, providing users with an engaging and accessible start to their experience.
 
@@ -82,7 +97,7 @@ The Home Screen serves as the main entry point for the application. It features 
 | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | <img src="./assets/images/home-screen-desktop.webp" alt="desktop project image"/> | <img src="./assets/images/home-screen-mobile.webp" alt="mobile desktop image"/> |
 
-### **Rules Screen**
+#### **Rules Screen**
 
 The Rules Screen offers clear instructions and guidelines for playing the game. It provides detailed explanations of the game rules and objectives, ensuring users understand how to play. The screen includes a "Close" button for easy navigation back to the Home Screen, and the layout is designed for readability and straightforward understanding.
 
@@ -90,7 +105,7 @@ The Rules Screen offers clear instructions and guidelines for playing the game. 
 | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | <img src="./assets/images/rules-screen-desktop.webp" alt="desktop project image"/> | <img src="./assets/images/rules-screen-mobile.webp" alt="mobile desktop image"/> |
 
-### **Game Screen**
+#### **Game Screen**
 
 The Game Screen is where the actual gameplay takes place. It includes interactive color buttons (green, red, yellow, blue) that players use to engage with the game. The screen displays the current game status and level, features a "Start" button to start, and "Reset" button for restarting the game, and includes sound controls to toggle game sounds on or off. Visual feedback is provided for user actions, including animations for correct and incorrect inputs, enhancing the overall gaming experience.
 
@@ -102,7 +117,7 @@ The Game Screen is where the actual gameplay takes place. It includes interactiv
 
 BEM (Block, Element, Modifier) is a popular naming convention for classes in HTML and CSS, originally developed by Yandex. It is designed to create reusable, modular, and maintainable code.
 
-### BEM Structure
+#### BEM Structure
 
 BEM divides the user interface into independent blocks, which can be reused across different parts of the application. The naming convention follows a specific structure:
 
@@ -113,7 +128,7 @@ BEM divides the user interface into independent blocks, which can be reused acro
 - **Modifier**: A flag on a block or an element that changes its appearance or behavior.
   - Example: `menu__item--active`, `header--large`
 
-### Naming Convention
+#### Naming Convention
 
 The BEM naming convention uses a double underscore (`__`) to separate elements from their block and a double hyphen (`--`) to separate modifiers from blocks or elements.
 
@@ -121,7 +136,7 @@ The BEM naming convention uses a double underscore (`__`) to separate elements f
 - **Element**: `block-name__element-name`
 - **Modifier**: `block-name--modifier-name` or `block-name__element-name--modifier-name`
 
-### Example
+#### Example
 
 ```html
 <div class="menu">
@@ -139,7 +154,7 @@ In this example:
 - `menu__list` and `menu__item` are elements of the menu block.
 - `menu__item--active` is a modifier that changes the appearance of the `menu__item` element.
 
-### Benefits of BEM
+#### Benefits of BEM
 
 1. **Clarity and Readability:** BEM makes it clear what each class refers to by looking at its name. It is easy to identify whether a class represents a block, an element, or a modifier.
 
@@ -157,7 +172,7 @@ In this example:
 
 Sass (Syntactically Awesome Style Sheets) is a CSS pre-processor that adds power and elegance to the basic language. It allows for variables, nested rules, mixins, functions, and more, helping to keep large stylesheets well-organized and easier to maintain.
 
-### Benefits of Sass
+#### Benefits of Sass
 
 1. **Variables:** Store colors, fonts, or any CSS value in variables for easy reuse and management.
 2. **Nesting:** Allows for a cleaner and more readable hierarchy of styles.
@@ -166,7 +181,7 @@ Sass (Syntactically Awesome Style Sheets) is a CSS pre-processor that adds power
 5. **Inheritance:** Share a set of CSS properties from one selector to another.
 6. **Built-in Functions:** Provides functions for manipulating colors, math operations, and more.
 
-### Reasons for Choosing Sass for this Project
+#### Reasons for Choosing Sass for this Project
 
 In my current internship, I am learning to use Sass as part of my development toolkit. Recognizing the value of this pre-processor in professional projects, I decided to incorporate Sass into my code institute project to practice and reinforce my skills. By applying Sass in this project, I am gaining hands-on experience with its features and best practices, which not only enhances the maintainability and scalability of my code but also aligns with industry standards. This approach allows me to leverage my learning from the internship and integrate it into practical applications, ultimately improving both my technical proficiency and the quality of my project.
 
@@ -180,36 +195,36 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 
 - Firefox
 
-### **JSHint Validation**
+#### **JSHint Validation**
 
 The JavaScript code has been run through the [JS HInt](https://jshint.com/) validator. Results can be found below.
 
-<img src="./assets/images/jshint.webp" alt="js hint validation" style="width: 100%; max-width: 400px;" />
+<img src="./assets/images/jshint.webp" alt="js hint validation" style="width: 400px;" />
 
-### **HTML Validation**
+#### **HTML Validation**
 
 The HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
 
-<img src="./assets/images/html-validation.webp" alt="w3c html validation" style="width: 100%; max-width: 400px;" />
+<img src="./assets/images/html-validation.webp" alt="w3c html validation" style="width: 400px;" />
 
-### **CSS Validation**
+#### **CSS Validation**
 
 The CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
-<img src="./assets/images/css-validation.webp" alt="w3c css validation" style="width: 100%; max-width: 400px;" />
+<img src="./assets/images/css-validation.webp" alt="w3c css validation" style="width: 400px;" />
 
-### **Google Lighthouse**
+#### **Google Lighthouse**
 
 The lighthouse score results can be found below.
 
-<img src="./assets/images/google-lighthouse.webp" alt="google lighthouse" style="width: 100%; max-width: 400px;" />
+<img src="./assets/images/google-lighthouse.webp" alt="google lighthouse" style="width: 400px;" />
 
-### **WAVE Accessibility Evaluation**
+#### **WAVE Accessibility Evaluation**
 
 The WAVE accessibility evaluation tool results can be found below.
 
-<img src="./assets/images/WAVE.webp" alt="WAVE accessibility evaluation" style="width: 100%; max-width: 400px;" />
+<img src="./assets/images/WAVE.webp" alt="WAVE accessibility evaluation" style="width: 400px;" />
 
-### **Manual Testing**
+#### **Manual Testing**
 
 | Features                   | Expected Outcome                                                            | Test Performed                                             | Results                                                                                      | Pass/Fail |
 | -------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
@@ -308,7 +323,7 @@ function handleColorClick(color) {
 }
 ```
 
-### **Test Final Review**
+#### **Test Final Review**
 
 The testing procedures have been executed, meeting all specified criteria. Results have been thoroughly documented, and any identified issues have been addressed. Post-testing, the website has been confirmed to be fully functional and accessible.
 
@@ -356,6 +371,8 @@ This website is developed using the following tools:
 
 **LinkedIn Post Inspector**: Post Inspector can help you identify the data missing on your page, and what you need to add for your content to have better previews in posts.
 
+**ChatGPT**: Assisted in developing the Simon Game story README section.
+
 **Favicon.io**: A tool that simplifies the creation of website favicons, allowing users to easily generate icons that represent their brand across different platforms and devices.
 
 **pixabay.com/**: A popular online resource for free high-quality sounds.
@@ -366,7 +383,7 @@ Each of these tools plays a crucial role in the development, deployment, and mai
 
 _This website is deployed using Netlify._
 
-### Steps
+#### Steps
 
 1. **Log in to Netlify:** Navigate to the [Netlify website](https://www.netlify.com/) and log in to your account.
 
