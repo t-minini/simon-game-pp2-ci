@@ -33,7 +33,7 @@ You can visit the live website [here!](https://simon-game-pp2-ci.netlify.app/)
 ![Coolors Palette](./assets/images/code-institute-pp2.webp)
 
 ### **Typography**
-
+- All icons were sourced through [Iconify](https://www.figma.com/community/plugin/735098390272716381/iconify) Figma plugin
 - All fonts were sourced through [Google Fonts](https://fonts.google.com/)
 - [Roboto](https://fonts.google.com/specimen/Roboto)
 - [Orbitron](https://fonts.google.com/specimen/Orbitronr)
