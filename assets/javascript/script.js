@@ -35,7 +35,7 @@ const gameSounds = {
 Object.values(gameSounds).forEach((sound) => sound.load());
 
 // GAME VARIABLES
-const WINNING_LEVEL = 2;
+const WINNING_LEVEL = 11;
 let computerSequence = [];
 let isMuted = false;
 let level = 0;

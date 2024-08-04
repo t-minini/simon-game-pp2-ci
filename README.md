@@ -8,7 +8,7 @@ Simon Game is a classic memory game where players need to repeat a sequence of c
 ![ipad mockup](./assets/images/mockuuups-ipad-mockup.webp)
 ![macbook mockup](./assets/images/mockuuups-macbook-mockup.webp)
 
-You can visit the live website [here!](website_link)
+You can visit the live website [here!](https://simon-game-pp2-ci.netlify.app/)
 
 ## User Experience
 
@@ -211,26 +211,26 @@ The WAVE accessibility evaluation tool results can be found below.
 
 ### **Manual Testing**
 
-| Features                   | Expected Outcome                                                            | Test Performed                                  | Results                                                                                      | Pass/Fail |
-| -------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
+| Features                   | Expected Outcome                                                            | Test Performed                                             | Results                                                                                      | Pass/Fail |
+| -------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
 | **Home Screen**            |
-| Play Button                | Navigates to the game screen                                                | Clicked "Play" button                           | Successfully navigated to the game screen                                                    | Pass      |
-| Rules Button               | Navigates to the rules screen                                               | Clicked "Rules" button                          | Successfully navigated to the rules screen                                                   | Pass      |
+| Play Button                | Navigates to the game screen                                                | Clicked "Play" button                                      | Successfully navigated to the game screen                                                    | Pass      |
+| Rules Button               | Navigates to the rules screen                                               | Clicked "Rules" button                                     | Successfully navigated to the rules screen                                                   | Pass      |
 | **Rules Screen**           |
-| Close Button               | Returns to the home screen                                                  | Clicked "Close" button                          | Successfully navigated back to the home screen                                               | Pass      |
+| Close Button               | Returns to the home screen                                                  | Clicked "Close" button                                     | Successfully navigated back to the home screen                                               | Pass      |
 | **Game Screen**            |
-| Color Buttons              | Plays corresponding sound and flashes button                                | Clicked on each color button                    | Each button played the correct sound and flashed                                             | Pass      |
-| Start Button               | Starts the game and begins the sequence                                     | Clicked "Start" button                          | Game sequence began and progressed as expected                                               | Pass      |
-| Reset Button               | Resets the game to its initial state                                        | Clicked "Reset" button                          | Game reset to initial state and cleared sequences                                            | Pass      |
-| Mute Button                | Toggles sound on/off for game sounds                                        | Clicked "Mute" button                           | Sound toggled on and off as expected                                                         | Pass      |
-| Sound Icons                | Display correct icon based on sound state                                   | Checked the sound icons                         | Icons correctly displayed based on sound state                                               | Pass      |
-| Status Screen              | Displays correct status messages                                            | Verified status messages during game events     | Status messages updated correctly                                                            | Pass      |
-| Level Screen               | Shows current level or status of the game                                   | Checked level display during gameplay           | Level displayed correctly and updated during play                                            | Pass      |
-| Navigation Between Screens | Smooth transition between screens                                           | Navigated between Home, Rules, and Game screens | Transitions between screens were smooth and correct                                          | Pass      |
-| Winning                    | Displays win message, flashes buttons, and updates screen accordingly       | Completed game with correct sequence            | Win message displayed, buttons flashed, game status updated, and reset options enabled       | Pass      |
-| Game Over                  | Displays game over message, flashes buttons, and updates screen accordingly | Made an incorrect move                          | Game over message displayed, buttons flashed, game status updated, and reset options enabled | Pass      |
-| **Footer**            |
-| Footer Link to GitHub               | The footer contains a link that opens the GitHub repository in a new tab.                                               | Check the footer section of the page and inspect the link.                          | The link is present and correctly opens in a new tab.                                                  | Pass      |
+| Color Buttons              | Plays corresponding sound and flashes button                                | Clicked on each color button                               | Each button played the correct sound and flashed                                             | Pass      |
+| Start Button               | Starts the game and begins the sequence                                     | Clicked "Start" button                                     | Game sequence began and progressed as expected                                               | Pass      |
+| Reset Button               | Resets the game to its initial state                                        | Clicked "Reset" button                                     | Game reset to initial state and cleared sequences                                            | Pass      |
+| Mute Button                | Toggles sound on/off for game sounds                                        | Clicked "Mute" button                                      | Sound toggled on and off as expected                                                         | Pass      |
+| Sound Icons                | Display correct icon based on sound state                                   | Checked the sound icons                                    | Icons correctly displayed based on sound state                                               | Pass      |
+| Status Screen              | Displays correct status messages                                            | Verified status messages during game events                | Status messages updated correctly                                                            | Pass      |
+| Level Screen               | Shows current level or status of the game                                   | Checked level display during gameplay                      | Level displayed correctly and updated during play                                            | Pass      |
+| Navigation Between Screens | Smooth transition between screens                                           | Navigated between Home, Rules, and Game screens            | Transitions between screens were smooth and correct                                          | Pass      |
+| Winning                    | Displays win message, flashes buttons, and updates screen accordingly       | Completed game with correct sequence                       | Win message displayed, buttons flashed, game status updated, and reset options enabled       | Pass      |
+| Game Over                  | Displays game over message, flashes buttons, and updates screen accordingly | Made an incorrect move                                     | Game over message displayed, buttons flashed, game status updated, and reset options enabled | Pass      |
+| **Footer**                 |
+| Footer Link to GitHub      | The footer contains a link that opens the GitHub repository in a new tab.   | Check the footer section of the page and inspect the link. | The link is present and correctly opens in a new tab.                                        | Pass      |
 
 ### **Bugs**
 
