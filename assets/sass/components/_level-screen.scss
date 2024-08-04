@@ -8,6 +8,10 @@
   background: $color-grey-darker;
   border: 0.3rem solid $color-grey-dark;
   border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include breakpoint(tablet) {
     width: 6rem;
@@ -17,5 +21,13 @@
 
   &__text {
     color: $color-red;
+    font-family: $orbitron;
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+
+    @include breakpoint(tablet) {
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+    }
   }
 }

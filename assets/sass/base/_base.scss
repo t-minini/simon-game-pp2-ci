@@ -1,4 +1,6 @@
 /* below, global reset and base styles including box-sizing, font size, and text selection. */
+@import '../settings/colors';
+
 *,
 *::after,
 *::before {
@@ -13,8 +15,14 @@ html {
 
 body {
   box-sizing: border-box;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-navy;
 }
 
 ::selection {
-  // personalize text selection color. TO BE ADDED!
+  color: $color-green-btn;
+  background-color: $color-blue-btn-border;
 }

@@ -1,0 +1,24 @@
+/* below, style for mute/unmute button @ game screen */
+@import '../settings/colors';
+
+.sound-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--red {
+    background-color: $color-red-btn;
+    border: 3px solid $color-red-btn-border;
+  }
+
+  &--green {
+    background-color: $color-green-btn;
+    border: 3px solid $color-green-btn-border;
+    display: none;
+  }
+}

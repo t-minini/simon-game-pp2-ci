@@ -1,10 +1,16 @@
-/* below, typography styles for headings, status text, rules list, and buttons. */
+/* below, typography styles for headings and list. */
 @import '../settings/fonts';
 @import '../settings/colors';
 @import '../utils/breakpoints';
 
 .heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &--main {
+    width: 100%;
+    text-align: center;
     font-family: $orbitron;
     font-size: 3.6rem;
     letter-spacing: 0.4rem;
@@ -18,6 +24,8 @@
   }
 
   &--sub {
+    width: 70%;
+    text-align: center;
     font-family: $roboto;
     font-size: 1.6rem;
     font-weight: 300;
@@ -36,19 +44,24 @@
   font-weight: bold;
   color: $color-grey-dark;
 
+  @include breakpoint(tablet) {
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+  }
+
   &--sub {
-    font-family: $roboto;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: $color-grey-dark;
+    // font-family: $roboto;
+    // font-size: 1.5rem;
+    // font-weight: 300;
+    // color: $color-grey-dark;
   }
 }
 
 .heading-tertiary {
   font-family: $orbitron;
   font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: rgba($color-white, 0.2);
@@ -56,33 +69,6 @@
   @include breakpoint(tablet) {
     font-size: 2.2rem;
     letter-spacing: 0.5rem;
-  }
-}
-
-.status-screen {
-  &__text {
-    font-family: $orbitron;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: 0.12rem;
-
-    @include breakpoint(tablet) {
-      font-size: 1.8rem;
-      letter-spacing: 0.16rem;
-    }
-  }
-}
-
-.level-screen {
-  &__text {
-    font-family: $orbitron;
-    font-size: 1.9rem;
-    line-height: 1.9rem;
-
-    @include breakpoint(tablet) {
-      font-size: 2.4rem;
-      line-height: 2.4rem;
-    }
   }
 }
 
@@ -99,8 +85,17 @@
     padding-bottom: 0.5rem;
     font-weight: 200;
 
+    @include breakpoint(tablet) {
+      font-size: 2rem;
+      padding-bottom: 01rem;
+    }
+
     & strong {
       font-size: 1.4rem;
+
+      @include breakpoint(tablet) {
+        font-size: 2.2rem;
+      }
     }
   }
 
@@ -109,9 +104,9 @@
   }
 }
 
-.btn--sub {
-  font-family: $roboto;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: $color-white;
-}
+// .btn--sub {
+//   font-family: $roboto;
+//   font-size: 1.2rem;
+//   font-weight: 500;
+//   color: $color-white;
+// }

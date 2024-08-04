@@ -13,10 +13,27 @@ html {
 
 body {
   box-sizing: border-box;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111827;
 }
 
-/* below, typography styles for headings, status text, rules list, and buttons. */
+::selection {
+  color: #22c55e;
+  background-color: #3b6ef6;
+}
+
+/* below, typography styles for headings and list. */
+.heading-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .heading-primary--main {
+  width: 100%;
+  text-align: center;
   font-family: "Orbitron", sans-serif;
   font-size: 3.6rem;
   letter-spacing: 0.4rem;
@@ -30,6 +47,8 @@ body {
   }
 }
 .heading-primary--sub {
+  width: 70%;
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
@@ -48,18 +67,17 @@ body {
   font-weight: bold;
   color: #2f2b2f;
 }
-.heading-secondary--sub {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #2f2b2f;
+@media only screen and (min-width: 768px) {
+  .heading-secondary {
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+  }
 }
-
 .heading-tertiary {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
@@ -68,31 +86,6 @@ body {
   .heading-tertiary {
     font-size: 2.2rem;
     letter-spacing: 0.5rem;
-  }
-}
-
-.status-screen__text {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: 0.12rem;
-}
-@media only screen and (min-width: 768px) {
-  .status-screen__text {
-    font-size: 1.8rem;
-    letter-spacing: 0.16rem;
-  }
-}
-
-.level-screen__text {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.9rem;
-  line-height: 1.9rem;
-}
-@media only screen and (min-width: 768px) {
-  .level-screen__text {
-    font-size: 2.4rem;
-    line-height: 2.4rem;
   }
 }
 
@@ -109,34 +102,27 @@ body {
   padding-bottom: 0.5rem;
   font-weight: 200;
 }
+@media only screen and (min-width: 768px) {
+  .rules-list__item {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+}
 .rules-list__item strong {
   font-size: 1.4rem;
+}
+@media only screen and (min-width: 768px) {
+  .rules-list__item strong {
+    font-size: 2.2rem;
+  }
 }
 .rules-list__item:last-child {
   padding-bottom: 0;
 }
 
-.btn--sub {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #ffffff;
-}
-
 /* below, utility classes */
 .hide {
   display: none;
-}
-
-/* below, styles for the bottom buttons container @ game screen. */
-.bottom-btns {
-  width: 100%;
-  height: 3rem;
-}
-@media only screen and (min-width: 768px) {
-  .bottom-btns {
-    height: 4rem;
-  }
 }
 
 /* below, styles for buttons, including main (home screen) and secondary (game screen) types. */
@@ -194,6 +180,21 @@ body {
   background-color: #3c3e3d;
   color: #d9d9d9;
   border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .close-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.8rem;
+    top: 2rem;
+    right: 2rem;
+  }
 }
 
 /* below, styles for color buttons, including active states and border settings @ game screen */
@@ -247,6 +248,7 @@ body {
 
 /* below, styles and animation for the home colored corners @ home screen */
 .home-bg {
+  position: absolute;
   width: 31rem;
   height: 39rem;
   border-radius: 0.8rem;
@@ -259,6 +261,7 @@ body {
   }
 }
 .home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
+  position: absolute;
   width: 7rem;
   height: 7rem;
   animation: pulse 2s infinite;
@@ -270,21 +273,29 @@ body {
   }
 }
 .home-bg__top-left {
+  top: 0;
+  left: 0;
   border-radius: 0.8rem 0.8rem 8rem 0.8rem;
   background: #22c55e;
   transform-origin: top left;
 }
 .home-bg__top-right {
+  top: 0;
+  right: 0;
   border-radius: 0.8rem 0.8rem 0.8rem 8rem;
   background: #ef4444;
   transform-origin: top right;
 }
 .home-bg__bottom-left {
+  bottom: 0;
+  left: 0;
   border-radius: 0.8rem 10.6rem 0.8rem 0.8rem;
   background: #eab308;
   transform-origin: bottom left;
 }
 .home-bg__bottom-right {
+  bottom: 0;
+  right: 0;
   border-radius: 8rem 0.8rem 0.8rem 0.8rem;
   background: #3b82f6;
   transform-origin: bottom right;
@@ -311,6 +322,10 @@ body {
   background: #1c0003;
   border: 0.3rem solid #2f2b2f;
   border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media only screen and (min-width: 768px) {
   .level-screen {
@@ -321,27 +336,33 @@ body {
 }
 .level-screen__text {
   color: #ed000b;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.9rem;
+  line-height: 1.9rem;
+}
+@media only screen and (min-width: 768px) {
+  .level-screen__text {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+  }
 }
 
 /* below, style for mute/unmute button @ game screen */
-.sound-btns {
-  background: none;
-  border: none;
-  width: 4rem;
-  height: 4rem;
-}
-.sound-btns__icon {
+.sound-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
 }
-.sound-btns__icon--red {
+.sound-icon--red {
   background-color: #ef4444;
   border: 3px solid #ef1b44;
 }
-.sound-btns__icon--green {
+.sound-icon--green {
   background-color: #22c55e;
   border: 3px solid #22b85e;
   display: none;
@@ -354,28 +375,120 @@ body {
   border: 0.3rem solid #2f2b2f;
   border-radius: 0.8rem;
   min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .status-screen {
     min-height: 4rem;
     border-width: 0.6rem;
+    margin-bottom: 2rem;
   }
 }
 .status-screen__text {
   width: 100%;
   color: #ed000b;
   text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.12rem;
+}
+@media only screen and (min-width: 768px) {
+  .status-screen__text {
+    font-size: 1.8rem;
+    letter-spacing: 0.16rem;
+  }
 }
 
-/* below, layout and positioning for main game components, including containers, buttons, and background elements. */
-body {
-  min-height: 100dvh;
+/* below, styles for home, rules, and game containers. */
+.container {
+  height: 100%;
+  width: 100%;
+}
+.container--home {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background-color: #111827;
+  align-items: center;
+}
+.container--rules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 2.5rem;
+}
+.container--game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container--hide {
+  display: none;
+}
+.container--home-btns {
+  margin-top: 3rem;
+}
+.container--game-color-btns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .container--game-color-btns {
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+}
+.container--game-btns {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .container--game-btns {
+    margin-top: 2rem;
+    height: 4rem;
+  }
+}
+.container--sound-btns {
+  background: none;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  bottom: -5rem;
+  right: 0rem;
+}
+.container--game-bg {
+  width: 29rem;
+  height: 37rem;
+  border-radius: 0.8rem;
+  background: #3c3e3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .container--game-bg {
+    width: 48rem;
+    height: 60rem;
+    padding: 2rem;
+  }
 }
 
+/* Below, layout and positioning for the main wrapper component. */
 .wrapper {
   width: 32rem;
   height: 40rem;
@@ -391,176 +504,4 @@ body {
     width: 52rem;
     height: 64rem;
   }
-}
-
-.home-btns {
-  margin-top: 3rem;
-}
-
-.game-bg {
-  width: 29rem;
-  height: 37rem;
-  border-radius: 0.8rem;
-  background: #3c3e3d;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  .game-bg {
-    width: 48rem;
-    height: 60rem;
-    padding: 2rem;
-  }
-}
-
-.game-btns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 1rem;
-  row-gap: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  .game-btns {
-    column-gap: 2rem;
-    row-gap: 2rem;
-  }
-}
-
-.heading-primary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.heading-primary--main {
-  width: 100%;
-  text-align: center;
-}
-.heading-primary--sub {
-  width: 70%;
-  text-align: center;
-}
-
-.level-screen {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.status-screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  .status-screen {
-    margin-bottom: 2rem;
-  }
-}
-
-.bottom-btns {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  .bottom-btns {
-    margin-top: 2rem;
-  }
-}
-
-.sound-btns {
-  position: absolute;
-  bottom: -5rem;
-  right: 0rem;
-}
-.sound-btns__icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.home-container--hide {
-  display: none;
-}
-
-.rules-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding-top: 2.5rem;
-}
-.rules-container--hide {
-  display: none;
-}
-
-.game-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.game-container--hide {
-  display: none;
-}
-
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-bg {
-  position: absolute;
-}
-.home-bg__top-left, .home-bg__top-right, .home-bg__bottom-left, .home-bg__bottom-right {
-  position: absolute;
-}
-.home-bg__top-left {
-  top: 0;
-  left: 0;
-}
-.home-bg__top-right {
-  top: 0;
-  right: 0;
-}
-.home-bg__bottom-left {
-  bottom: 0;
-  left: 0;
-}
-.home-bg__bottom-right {
-  bottom: 0;
-  right: 0;
-}
-
-/* below, styles for home, rules, and game containers. */
-.home-container {
-  height: 100%;
-  width: 100%;
-}
-
-.rules-container {
-  height: 100%;
-  width: 100%;
-}
-
-.game-container {
-  height: 100%;
-  width: 100%;
 }

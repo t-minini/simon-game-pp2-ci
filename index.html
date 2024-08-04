@@ -43,14 +43,14 @@
   <body>
     <main class="wrapper" id="wrapper">
       <!-- home screen -->
-      <section class="home-container home-container--hide" id="home-container">
+      <section class="container container--home container--hide" id="container--home">
         <h1 class="heading-primary" id="home-heading">
           <span class="heading-primary--main">Simon Game</span>
           <span class="heading-primary--sub"
             >Test your memory and see how far you can go!</span
           >
         </h1>
-        <div class="home-btns" id="home-btns">
+        <div class="container--home-btns" id="home-btns">
           <button class="button button--main" id="play-btn">play</button>
           <button class="button button--main" id="rules-btn">rules</button>
         </div>
@@ -63,8 +63,8 @@
       </section>
       <!-- rules screen -->
       <section
-        class="rules-container rules-container--hide"
-        id="rules-container"
+        class="container container--rules container--hide"
+        id="container--rules"
       >
         <h2 class="heading-secondary">Game Rules</h2>
         <ul class="rules-list">
@@ -95,14 +95,14 @@
         <button class="close-btn" id="close-btn">X</button>
       </section>
       <!-- game screen -->
-      <section class="game-container game-container--hide" id="game-container">
-        <div class="game-bg">
+      <section class="container container--game container--hide" id="container--game">
+        <div class="container--game-bg">
           <div class="status-screen">
             <span class="status-screen__text" id="status-screen-text"
               >PRESS START TO PLAY!</span
             >
           </div>
-          <div class="game-btns">
+          <div class="container--game-color-btns">
             <button class="color-btn color-btn--green" id="green-btn"></button>
             <button class="color-btn color-btn--red" id="red-btn"></button>
             <button
@@ -114,17 +114,17 @@
           <div class="level-screen">
             <span class="level-screen__text" id="level-screen-number">--</span>
           </div>
-          <div class="bottom-btns">
+          <div class="container--game-btns">
             <button class="button button--sub" id="home-btn">HOME</button>
             <h3 class="heading-tertiary">Simon Game</h3>
             <button class="button button--sub" id="start-btn">START</button>
             <button class="button button--sub" id="reset-btn">RESET</button>
           </div>
         </div>
-        <button id="sound-btns" class="sound-btns">
-          <img id="sound-off" class="sound-btns__icon sound-btns__icon--red" src="assets/icons/sound-off.svg" alt="Turns sound off" title="Turn sound off">
-          <img id="sound-on" class="sound-btns__icon sound-btns__icon--green" src="assets/icons/sound-on.svg" alt="Turns sound on" title="Turn sound on">
-        </button>
+        <div class="container--sound-btns" id="sound-btns">
+          <img id="sound-off" class="sound-icon sound-icon--red" src="assets/icons/sound-off.svg" alt="Turns sound off" title="Turn sound off">
+          <img id="sound-on" class="sound-icon sound-icon--green" src="assets/icons/sound-on.svg" alt="Turns sound on" title="Turn sound on">
+        </div>
       </section>
     </main>
     <!-- javascript -->

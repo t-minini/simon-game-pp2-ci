@@ -1,75 +1,74 @@
 // HOME SCREEN ELEMENTS
-const homeWrapper = document.getElementById('home-container');
+const homeWrapper = document.getElementById('container--home');
 const playBtn = document.getElementById('play-btn');
 const rulesBtn = document.getElementById('rules-btn');
 
 // RULES SCREEN ELEMENTS
-const rulesWrapper = document.getElementById('rules-container');
 const closeBtn = document.getElementById('close-btn');
+const rulesWrapper = document.getElementById('container--rules');
 
 // GAME SCREEN ELEMENTS
-const gameWrapper = document.getElementById('game-container');
-const statusScreen = document.getElementById('status-screen-text');
-const levelScreen = document.getElementById('level-screen-number');
-const greenBtn = document.getElementById('green-btn');
-const redBtn = document.getElementById('red-btn');
-const yellowBtn = document.getElementById('yellow-btn');
 const blueBtn = document.getElementById('blue-btn');
 const gameHomeBtn = document.getElementById('home-btn');
-const startBtn = document.getElementById('start-btn');
+const gameWrapper = document.getElementById('container--game');
+const greenBtn = document.getElementById('green-btn');
+const levelScreen = document.getElementById('level-screen-number');
+const redBtn = document.getElementById('red-btn');
 const resetBtn = document.getElementById('reset-btn');
 const soundBtns = document.getElementById('sound-btns');
 const soundOffIcon = document.getElementById('sound-off');
 const soundOnIcon = document.getElementById('sound-on');
+const startBtn = document.getElementById('start-btn');
+const statusScreen = document.getElementById('status-screen-text');
+const yellowBtn = document.getElementById('yellow-btn');
 
 // GAME SOUNDS
 const gameSounds = {
+  blue: new Audio('assets/sounds/blue-sound.mp3'),
+  gameOver: new Audio('assets/sounds/game-over-sound.mp3'),
   green: new Audio('assets/sounds/green-sound.mp3'),
   red: new Audio('assets/sounds/red-sound.mp3'),
+  win: new Audio('assets/sounds/win-sound.mp3'),
   yellow: new Audio('assets/sounds/yellow-sound.mp3'),
-  blue: new Audio('assets/sounds/blue-sound.mp3'),
-  correct: new Audio(''),
-  win: new Audio('assets/sounds/win.mp3'),
-  gameOver: new Audio('assets/sounds/game-over.mp3'),
 };
 
 // PRELOAD SOUNDS
 Object.values(gameSounds).forEach((sound) => sound.load());
 
 // GAME VARIABLES
-let level = 0;
+const WINNING_LEVEL = 11;
 let computerSequence = [];
+let isMuted = false;
+let level = 0;
 let playerSequence = [];
 let waitingForPlayer = false;
-let isMuted = false;
-const WINNING_LEVEL = 11;
 
 // NAVIGATION LOGIC STARTS HERE
 /**
  * Show home screen
  */
 function homeScreenVisible() {
-  homeWrapper.classList.remove('home-container--hide');
-  rulesWrapper.classList.add('rules-container--hide');
-  gameWrapper.classList.add('game-container--hide');
+  homeWrapper.classList.remove('container--hide');
+  rulesWrapper.classList.add('container--hide');
+  gameWrapper.classList.add('container--hide');
 }
 
 /**
  * Show rules screen
  */
 function rulesScreenVisible() {
-  homeWrapper.classList.add('home-container--hide');
-  rulesWrapper.classList.remove('rules-container--hide');
-  gameWrapper.classList.add('game-container--hide');
+  homeWrapper.classList.add('container--hide');
+  rulesWrapper.classList.remove('container--hide');
+  gameWrapper.classList.add('container--hide');
 }
 
 /**
  * Show game screen
  */
 function gameScreenVisible() {
-  homeWrapper.classList.add('home-container--hide');
-  rulesWrapper.classList.add('rules-container--hide');
-  gameWrapper.classList.remove('game-container--hide');
+  homeWrapper.classList.add('container--hide');
+  rulesWrapper.classList.add('container--hide');
+  gameWrapper.classList.remove('container--hide');
   resetBtn.classList.add('hide');
   flashSequence(2);
 }
@@ -78,9 +77,9 @@ function gameScreenVisible() {
  * Navigate back to home screen from rules screen
  */
 function backHomeBtnRules() {
-  homeWrapper.classList.remove('home-container--hide');
-  rulesWrapper.classList.add('rules-container--hide');
-  gameWrapper.classList.add('game-container--hide');
+  homeWrapper.classList.remove('container--hide');
+  rulesWrapper.classList.add('container--hide');
+  gameWrapper.classList.add('container--hide');
 }
 
 /**

@@ -1,5 +1,6 @@
 /* below, styles and animation for the close button @ rules screen */
 @import '../settings/colors';
+@import '../utils/breakpoints';
 
 .close-btn {
   width: 2.1rem;
@@ -9,4 +10,18 @@
   background-color: $color-grey-light;
   color: $color-grey-lighter;
   border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint(tablet) {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.8rem;
+    top: 2rem;
+    right: 2rem;
+  }
 }

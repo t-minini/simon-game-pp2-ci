@@ -8,15 +8,29 @@
   border: 0.3rem solid $color-grey-dark;
   border-radius: 0.8rem;
   min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 
   @include breakpoint(tablet) {
     min-height: 4rem;
     border-width: 0.6rem;
+    margin-bottom: 2rem;
   }
 
   &__text {
     width: 100%;
     color: $color-red;
     text-align: center;
+    font-family: $orbitron;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.12rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.8rem;
+      letter-spacing: 0.16rem;
+    }
   }
 }
