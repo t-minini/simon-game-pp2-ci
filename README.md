@@ -284,8 +284,9 @@ After:
 
 ```javascript
 function handleColorClick(color) {
-  if (!waitingForPlayer || gameOverState) return; // Add a check for the game over state
+  if (!waitingForPlayer) return;
 
+  // solution here
   if (playerSequence.length >= computerSequence.length) return;
 
   playerSequence.push(color);
