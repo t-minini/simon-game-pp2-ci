@@ -183,24 +183,25 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 ### **HTML Validation**
 
 All HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
-![w3c html validation](./assets/images/html-validation.webp)
+
+<img src="./assets/images/html-validation.webp" alt="w3c html validation" style="width: 100%; max-width: 400px;" />
 
 ### **CSS Validation**
 
 All CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
-![w3c css validation](./assets/images/css-validation.webp)
+<img src="./assets/images/css-validation.webp" alt="w3c css validation" style="width: 100%; max-width: 400px;" />
 
 ### **Google Lighthouse**
 
 The lighthouse score results can be found below.
 
-![google lighthouse](./assets/images/google-lighthouse.webp)
+<img src="./assets/images/google-lighthouse.webp" alt="google lighthouse" style="width: 100%; max-width: 400px;" />
 
 ### **WAVE Accessibility Evaluation**
 
 The WAVE accessibility evaluation tool results can be found below.
 
-![wave accessibility evaluation](./assets/images/WAVE.webp)
+<img src="./assets/images/WAVE.webp" alt="WAVE accessibility evaluation" style="width: 100%; max-width: 400px;" />
 
 ### **Manual Testing**
 
