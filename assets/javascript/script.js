@@ -35,7 +35,7 @@ const gameSounds = {
 Object.values(gameSounds).forEach((sound) => sound.load());
 
 // GAME VARIABLES
-const WINNING_LEVEL = 11;
+const WINNING_LEVEL = 2;
 let computerSequence = [];
 let isMuted = false;
 let level = 0;
@@ -211,7 +211,7 @@ function resetGame() {
  */
 function winnerGame() {
   statusScreen.textContent = 'CONGRATULATIONS, YOU WIN!';
-  levelScreen.textContent = 'u{1F3C6}';
+  levelScreen.textContent = '🏆';
   if (!isMuted) {
     gameSounds.win.play();
   }
@@ -238,7 +238,7 @@ function gameOver() {
     if (!isMuted) {
       gameSounds.gameOver.play();
     }
-    levelScreen.textContent = 'u{1F480}';
+    levelScreen.textContent = '💀';
     setTimeout(() => {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
       levelScreen.textContent = '--';

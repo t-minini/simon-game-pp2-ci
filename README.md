@@ -28,8 +28,8 @@ You can visit the live website [here!](website_link)
 
 ### **Colours**
 
-![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-1.webp)
-![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-2.webp)
+![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-one.webp)
+![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-two.webp)
 ![Coolors Palette](./assets/images/code-institute-pp2.webp)
 
 ### **Typography**
@@ -185,7 +185,6 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 The JavaScript code has been run through the [JS HInt](https://jshint.com/) validator. Results can be found below.
 
 <img src="./assets/images/jshint.webp" alt="js hint validation" style="width: 100%; max-width: 400px;" />
-
 
 ### **HTML Validation**
 
@@ -362,7 +361,7 @@ Each of these tools plays a crucial role in the development, deployment, and mai
 
 ## Deployment
 
-*This website is deployed using Netlify.*
+_This website is deployed using Netlify._
 
 ### Steps
 
