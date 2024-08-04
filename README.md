@@ -1,10 +1,12 @@
+# Simon Game <img src="./assets/favicon/android-chrome-512x512.png" alt="simon game icon" height="50">
+
 ## Description
 
 Simon Game is a classic memory game where players need to repeat a sequence of colors and sounds in the correct order. The sequence gets progressively longer and more complex, challenging the player's memory and attention.
 
-![iphone mockup](path_to_iphone_image)
-![ipad mockup](path_to_ipad_image)
-![macbook mockup](path_to_macbook_image)
+![iphone mockup](./assets/images/mockuuups-iphone-mockup.webp)
+![ipad mockup](./assets/images/mockuuups-ipad-mockup.webp)
+![macbook mockup](./assets/images/mockuuups-macbook-mockup.webp)
 
 You can visit the live website [here!](website_link)
 
@@ -26,16 +28,18 @@ You can visit the live website [here!](website_link)
 
 ### **Colours**
 
-![Coolors Palette](image path)
+![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-1.webp)
+![Coolors Palette](./assets/images/code-institute-pp2-color-buttons-2.webp)
+![Coolors Palette](./assets/images/code-institute-pp2.webp)
 
 ### **Typography**
 
 - All fonts were sourced through [Google Fonts](https://fonts.google.com/)
-- [Libre Caslon Text](https://fonts.google.com/specimen/Libre+Caslon+Text)
-- [Inter](https://fonts.google.com/specimen/Inter)
+- [Roboto](https://fonts.google.com/specimen/Roboto)
+- [Orbitron](https://fonts.google.com/specimen/Orbitronr)
 
-![libre google fonts](image path)
-![inter google fonts](image path)
+![roboto google fonts](./assets/images/roboto-google-fonts.webp)
+![orbitron google fonts](./assets/images/orbitron-google-fonts.webp)
 
 ### **Wireframe and Prototype**
 
@@ -44,7 +48,14 @@ You can visit the live website [here!](website_link)
 <details>
 <summary> Open for desktop wireframe </summary>
 
-![balsamiq wireframe](image path)
+![balsamiq wireframe](./assets/images/balsamic-wireframe-desktop.webp)
+
+</details>
+
+<details>
+<summary> Open for mobile wireframe </summary>
+
+![balsamiq wireframe](./assets/images/balsamic-wireframe-mobile.webp)
 
 </details>
 
@@ -53,14 +64,7 @@ You can visit the live website [here!](website_link)
 <details>
 <summary> Open for desktop prototype </summary>
 
-![figma prototype](image path)
-
-</details>
-
-<details>
-<summary> Open for mobile prototype </summary>
-
-![figma prototype](image path)
+![figma prototype](./assets/images/figma-prototype.webp)
 
 </details>
 
@@ -68,12 +72,31 @@ You can visit the live website [here!](website_link)
 
 ### **Meta Tags and Optimization**
 
-### **Navbar**
+The <head> section of the Simon Game website includes essential meta tags for SEO and social media sharing. The meta description provides a summary for search engines, while the keywords tag helps search engines understand the site content. The Open Graph URL tag defines the canonical URL for social media, and the author tag credits Tulio Minini. The Open Graph title and image tags set the title and image for social media sharing, ensuring the content is attractive and informative when shared on platforms like Facebook and Twitter.
 
-To be developed
-| Desktop | Mobile |
-|-------------------|-------------------|
-|<img src="image path" alt=""/>|<img src="image path" alt=""/>|
+### **Home Screen**
+
+The Home Screen serves as the main entry point for the application. It features a "Play" button to navigate users to the Game screen and a "Rules" button that navigates users to the Rules Screen. The layout includes introductory elements and the game title, providing users with an engaging and accessible start to their experience.
+
+| Desktop                                                                           | Mobile                                                                          |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| <img src="./assets/images/home-screen-desktop.webp" alt="desktop project image"/> | <img src="./assets/images/home-screen-mobile.webp" alt="mobile desktop image"/> |
+
+### **Rules Screen**
+
+The Rules Screen offers clear instructions and guidelines for playing the game. It provides detailed explanations of the game rules and objectives, ensuring users understand how to play. The screen includes a "Close" button for easy navigation back to the Home Screen, and the layout is designed for readability and straightforward understanding.
+
+| Desktop                                                                            | Mobile                                                                           |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| <img src="./assets/images/rules-screen-desktop.webp" alt="desktop project image"/> | <img src="./assets/images/rules-screen-mobile.webp" alt="mobile desktop image"/> |
+
+### **Game Screen**
+
+The Game Screen is where the actual gameplay takes place. It includes interactive color buttons (green, red, yellow, blue) that players use to engage with the game. The screen displays the current game status and level, features a "Start" button to start, and "Reset" button for restarting the game, and includes sound controls to toggle game sounds on or off. Visual feedback is provided for user actions, including animations for correct and incorrect inputs, enhancing the overall gaming experience.
+
+| Desktop                                                                           | Mobile                                                                          |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| <img src="./assets/images/game-screen-desktop.webp" alt="desktop project image"/> | <img src="./assets/images/game-screen-mobile.webp" alt="mobile desktop image"/> |
 
 ## BEM Methodology
 
@@ -142,6 +165,9 @@ Sass (Syntactically Awesome Style Sheets) is a CSS pre-processor that adds power
 4. **Mixins:** Create reusable chunks of code to avoid redundancy.
 5. **Inheritance:** Share a set of CSS properties from one selector to another.
 6. **Built-in Functions:** Provides functions for manipulating colors, math operations, and more.
+
+### Reasons for Choosing Sass for this Project
+In my current internship, I am learning to use Sass as part of my development toolkit. Recognizing the value of this pre-processor in professional projects, I decided to incorporate Sass into my code institute project to practice and reinforce my skills. By applying Sass in this project, I am gaining hands-on experience with its features and best practices, which not only enhances the maintainability and scalability of my code but also aligns with industry standards. This approach allows me to leverage my learning from the internship and integrate it into practical applications, ultimately improving both my technical proficiency and the quality of my project.
 
 ## Testing
 
@@ -230,10 +256,9 @@ After:
 <img src="assets/images/cat-hero.webp" alt="yellow devon rex cat sitting" />
 ```
 
-
 ```javascript
 // If the player clicks more buttons than the length of the computer sequence, ignore the click
-  if (playerSequence.length >= computerSequence.length) return;
+if (playerSequence.length >= computerSequence.length) return;
 ```
 
 ### **Test Final Review**
@@ -312,20 +337,18 @@ This website is deployed using Netlify.
 
 ## How to Clone the Repository and Install Packages
 
-
 1. **Clone the Repository:**
 
-    ```sh
-    git clone https://github.com/yourusername/your-repository.git
-    cd your-repository
-    ```
+   ```sh
+   git clone https://github.com/yourusername/your-repository.git
+   cd your-repository
+   ```
 
 2. **Install Dependencies:**
 
-    ```sh
-    npm install
-    ```
-
+   ```sh
+   npm install
+   ```
 
 ## Credits
 
