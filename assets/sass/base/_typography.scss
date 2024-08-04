@@ -48,13 +48,6 @@
     font-size: 3.5rem;
     letter-spacing: 1rem;
   }
-
-  &--sub {
-    // font-family: $roboto;
-    // font-size: 1.5rem;
-    // font-weight: 300;
-    // color: $color-grey-dark;
-  }
 }
 
 .heading-tertiary {
@@ -74,7 +67,7 @@
 
 .rules-list {
   font-family: $roboto;
-  color: $color-grey-light;
+  color: $color-grey-medium;
   width: 86%;
   list-style: none;
   margin: 1rem 0;
@@ -103,10 +96,3 @@
     padding-bottom: 0;
   }
 }
-
-// .btn--sub {
-//   font-family: $roboto;
-//   font-size: 1.2rem;
-//   font-weight: 500;
-//   color: $color-white;
-// }

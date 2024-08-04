@@ -73,6 +73,7 @@ body {
     letter-spacing: 1rem;
   }
 }
+
 .heading-tertiary {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
@@ -164,7 +165,7 @@ body {
   }
 }
 .button--sub:disabled {
-  color: #3c3e3d;
+  color: #d9d9d9;
   cursor: not-allowed;
 }
 .button--sub:disabled:active {
@@ -177,8 +178,8 @@ body {
   height: 2.1rem;
   cursor: pointer;
   font-size: 1.5rem;
-  background-color: #3c3e3d;
-  color: #d9d9d9;
+  background-color: #d9d9d9;
+  color: #3c3e3d;
   border: none;
   position: absolute;
   top: 1rem;
@@ -219,7 +220,7 @@ body {
   border-radius: 0.8rem 0.8rem 5rem 0.8rem;
 }
 .color-btn--green.active {
-  background-color: #68e596;
+  background-color: #66d899;
 }
 .color-btn--red {
   background-color: #ef4444;
@@ -227,7 +228,7 @@ body {
   border-radius: 0.8rem 0.8rem 0.8rem 5rem;
 }
 .color-btn--red.active {
-  background-color: #f7a2a2;
+  background-color: #f9475b;
 }
 .color-btn--yellow {
   background-color: #eab308;
@@ -235,7 +236,7 @@ body {
   border-radius: 0.8rem 5rem 0.8rem 0.8rem;
 }
 .color-btn--yellow.active {
-  background-color: #fad45e;
+  background-color: #f3b63e;
 }
 .color-btn--blue {
   background-color: #3b82f6;
@@ -243,7 +244,7 @@ body {
   border-radius: 5rem 0.8rem 0.8rem 0.8rem;
 }
 .color-btn--blue.active {
-  background-color: #9dc0fa;
+  background-color: #4f8dff;
 }
 
 /* below, styles and animation for the home colored corners @ home screen */

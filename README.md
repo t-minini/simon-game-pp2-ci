@@ -1,4 +1,4 @@
-# Simon Game <img src="./assets/favicon/android-chrome-512x512.png" alt="simon game icon" height="50">
+# Simon Game <img src="./assets/images/readme-img.webp" alt="simon game icon" height="30">
 
 ## Description
 
@@ -167,6 +167,7 @@ Sass (Syntactically Awesome Style Sheets) is a CSS pre-processor that adds power
 6. **Built-in Functions:** Provides functions for manipulating colors, math operations, and more.
 
 ### Reasons for Choosing Sass for this Project
+
 In my current internship, I am learning to use Sass as part of my development toolkit. Recognizing the value of this pre-processor in professional projects, I decided to incorporate Sass into my code institute project to practice and reinforce my skills. By applying Sass in this project, I am gaining hands-on experience with its features and best practices, which not only enhances the maintainability and scalability of my code but also aligns with industry standards. This approach allows me to leverage my learning from the internship and integrate it into practical applications, ultimately improving both my technical proficiency and the quality of my project.
 
 ## Testing
