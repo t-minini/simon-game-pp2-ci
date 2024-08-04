@@ -51,8 +51,8 @@
           >
         </h1>
         <div class="container--home-btns" id="home-btns">
-          <button class="button button--main" id="play-btn">play</button>
-          <button class="button button--main" id="rules-btn">rules</button>
+          <button class="button button--main" id="play-btn" role="button" aria-label="Start the game">play</button>
+          <button class="button button--main" id="rules-btn" role="button" aria-label="View game rules">rules</button>
         </div>
         <div class="home-bg">
           <div class="home-bg__top-left"></div>
@@ -92,38 +92,39 @@
             remember longer sequences each time. You win after getting 10 correct sequences.
           </li>
         </ul>
-        <button class="close-btn" id="close-btn">X</button>
+        <button class="close-btn" id="close-btn" role="button" aria-label="Close rules">X</button>
       </section>
       <!-- game screen -->
       <section class="container container--game container--hide" id="container--game">
         <div class="container--game-bg">
-          <div class="status-screen">
+          <div class="status-screen" aria-live="polite">
             <span class="status-screen__text" id="status-screen-text"
               >PRESS START TO PLAY!</span
             >
           </div>
           <div class="container--game-color-btns">
-            <button class="color-btn color-btn--green" id="green-btn"></button>
-            <button class="color-btn color-btn--red" id="red-btn"></button>
+            <button class="color-btn color-btn--green" id="green-btn" aria-label="freen button"></button>
+            <button class="color-btn color-btn--red" id="red-btn" aria-label="red button"></button>
             <button
               class="color-btn color-btn--yellow"
               id="yellow-btn"
+              aria-label="yellow button"
             ></button>
-            <button class="color-btn color-btn--blue" id="blue-btn"></button>
+            <button class="color-btn color-btn--blue" id="blue-btn" aria-label="blue button"></button>
           </div>
           <div class="level-screen">
             <span class="level-screen__text" id="level-screen-number">--</span>
           </div>
           <div class="container--game-btns">
-            <button class="button button--sub" id="home-btn">HOME</button>
+            <button class="button button--sub" id="home-btn" role="button" aria-label="Go to home screen">HOME</button>
             <h3 class="heading-tertiary">Simon Game</h3>
-            <button class="button button--sub" id="start-btn">START</button>
-            <button class="button button--sub" id="reset-btn">RESET</button>
+            <button class="button button--sub" id="start-btn" role="button" aria-label="Start the game">START</button>
+            <button class="button button--sub" id="reset-btn" role="button" aria-label="Reset the game">RESET</button>
           </div>
         </div>
         <div class="container--sound-btns" id="sound-btns">
-          <img id="sound-off" class="sound-icon sound-icon--red" src="assets/icons/sound-off.svg" alt="Turns sound off" title="Turn sound off">
-          <img id="sound-on" class="sound-icon sound-icon--green" src="assets/icons/sound-on.svg" alt="Turns sound on" title="Turn sound on">
+          <img id="sound-off" class="sound-icon sound-icon--red" src="assets/icons/sound-off.svg" alt="sound off" title="Turn sound off" role="button" tabindex="0" aria-label="Turn sound off">>
+          <img id="sound-on" class="sound-icon sound-icon--green" src="assets/icons/sound-on.svg" alt="sound on" title="Turn sound on" role="button" tabindex="0" aria-label="Turn sound on">>
         </div>
       </section>
     </main>

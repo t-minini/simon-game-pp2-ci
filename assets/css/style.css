@@ -220,7 +220,7 @@ body {
   border-radius: 0.8rem 0.8rem 5rem 0.8rem;
 }
 .color-btn--green.active {
-  background-color: #66d899;
+  background-color: #7dd2a3;
 }
 .color-btn--red {
   background-color: #ef4444;
@@ -228,7 +228,7 @@ body {
   border-radius: 0.8rem 0.8rem 0.8rem 5rem;
 }
 .color-btn--red.active {
-  background-color: #f9475b;
+  background-color: #eb8e99;
 }
 .color-btn--yellow {
   background-color: #eab308;
@@ -236,7 +236,7 @@ body {
   border-radius: 0.8rem 5rem 0.8rem 0.8rem;
 }
 .color-btn--yellow.active {
-  background-color: #f3b63e;
+  background-color: #dbbf86;
 }
 .color-btn--blue {
   background-color: #3b82f6;
@@ -244,7 +244,7 @@ body {
   border-radius: 5rem 0.8rem 0.8rem 0.8rem;
 }
 .color-btn--blue.active {
-  background-color: #4f8dff;
+  background-color: #71a0f8;
 }
 
 /* below, styles and animation for the home colored corners @ home screen */

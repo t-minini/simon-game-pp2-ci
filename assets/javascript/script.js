@@ -333,6 +333,8 @@ startBtn.addEventListener('click', startGame);
 resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 closeBtn.addEventListener('click', backHomeBtnRules);
+
+// event listener for sound buttons
 document.getElementById('sound-btns').addEventListener('click', toggleMute);
 
 // Color button event listeners
@@ -348,5 +350,14 @@ Object.keys(colorButtons).forEach((color) => {
   btn.addEventListener('touchstart', (event) => {
     event.preventDefault();
     handleColorClick(color);
+  });
+});
+
+// keyboard event listeners for sound icons
+document.querySelectorAll('.sound-icon').forEach((icon) => {
+  icon.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      icon.click(); // Trigger the click event
+    }
   });
 });
