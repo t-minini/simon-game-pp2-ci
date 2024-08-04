@@ -229,6 +229,8 @@ The WAVE accessibility evaluation tool results can be found below.
 | Navigation Between Screens | Smooth transition between screens                                           | Navigated between Home, Rules, and Game screens | Transitions between screens were smooth and correct                                          | Pass      |
 | Winning                    | Displays win message, flashes buttons, and updates screen accordingly       | Completed game with correct sequence            | Win message displayed, buttons flashed, game status updated, and reset options enabled       | Pass      |
 | Game Over                  | Displays game over message, flashes buttons, and updates screen accordingly | Made an incorrect move                          | Game over message displayed, buttons flashed, game status updated, and reset options enabled | Pass      |
+| **Footer**            |
+| Footer Link to GitHub               | The footer contains a link that opens the GitHub repository in a new tab.                                               | Check the footer section of the page and inspect the link.                          | The link is present and correctly opens in a new tab.                                                  | Pass      |
 
 ### **Bugs**
 
