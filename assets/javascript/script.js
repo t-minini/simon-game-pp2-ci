@@ -333,7 +333,7 @@ resetBtn.addEventListener('click', resetGame);
 gameHomeBtn.addEventListener('click', backHomeBtnGame);
 closeBtn.addEventListener('click', backHomeBtnRules);
 
-// event listener for sound buttons
+// Event listener for sound buttons
 document.getElementById('sound-btns').addEventListener('click', toggleMute);
 
 // Color button event listeners
@@ -352,11 +352,11 @@ Object.keys(colorButtons).forEach((color) => {
   });
 });
 
-// keyboard event listeners for sound icons
+// Keyboard event listeners for sound icons
 document.querySelectorAll('.sound-icon').forEach((icon) => {
   icon.addEventListener('keydown', function (event) {
     if (event.key === 'Enter' || event.key === ' ') {
-      icon.click(); // Trigger the click event
+      icon.click();
     }
   });
 });
