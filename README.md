@@ -79,7 +79,7 @@ The original Simon game was notable for its use of light and sound to create a s
 <details>
 <summary> Open for desktop prototype </summary>
 
-<img src="./assets/images/figma-prototype.webp" alt="figma prototype" style="width: 300px;" />
+<img src="./assets/images/figma-prototype.webp" alt="figma prototype" style="width: 400px;" />
 
 </details>
 
