@@ -4,8 +4,7 @@
   "description": "Project Portfolio Two for Code Institute Diploma in Full Stack Software Development",
   "main": "index.js",
   "scripts": {
-    "sass-dev": "sass --watch --no-source-map assets/sass/main.scss assets/css/style.css",
-    "sass-prod": "sass --no-source-map assets/sass/main.scss assets/css/style.comp.css"
+    "sass-dev": "sass --watch --no-source-map assets/sass/main.scss assets/css/style.css"
   },
   "author": "Tulio Minini",
   "license": "ISC",

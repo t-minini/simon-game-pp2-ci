@@ -15,7 +15,6 @@ const greenBtn = document.getElementById('green-btn');
 const levelScreen = document.getElementById('level-screen-number');
 const redBtn = document.getElementById('red-btn');
 const resetBtn = document.getElementById('reset-btn');
-const soundBtns = document.getElementById('sound-btns');
 const soundOffIcon = document.getElementById('sound-off');
 const soundOnIcon = document.getElementById('sound-on');
 const startBtn = document.getElementById('start-btn');
@@ -212,7 +211,7 @@ function resetGame() {
  */
 function winnerGame() {
   statusScreen.textContent = 'CONGRATULATIONS, YOU WIN!';
-  levelScreen.textContent = '\u{1F3C6}';
+  levelScreen.textContent = 'u{1F3C6}';
   if (!isMuted) {
     gameSounds.win.play();
   }
@@ -239,7 +238,7 @@ function gameOver() {
     if (!isMuted) {
       gameSounds.gameOver.play();
     }
-    levelScreen.textContent = '\u{1F480}';
+    levelScreen.textContent = 'u{1F480}';
     setTimeout(() => {
       statusScreen.textContent = 'CLICK RESET TO PLAY AGAIN!';
       levelScreen.textContent = '--';

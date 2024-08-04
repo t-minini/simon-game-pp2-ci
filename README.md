@@ -180,15 +180,22 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 
 - Firefox
 
+### **JSHint Validation**
+
+The JavaScript code has been run through the [JS HInt](https://jshint.com/) validator. Results can be found below.
+
+<img src="./assets/images/jshint.webp" alt="js hint validation" style="width: 100%; max-width: 400px;" />
+
+
 ### **HTML Validation**
 
-All HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
+The HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
 
 <img src="./assets/images/html-validation.webp" alt="w3c html validation" style="width: 100%; max-width: 400px;" />
 
 ### **CSS Validation**
 
-All CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
+The CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
 <img src="./assets/images/css-validation.webp" alt="w3c css validation" style="width: 100%; max-width: 400px;" />
 
 ### **Google Lighthouse**
@@ -205,62 +212,98 @@ The WAVE accessibility evaluation tool results can be found below.
 
 ### **Manual Testing**
 
-| Features   | Expected Outcome                                               | Test Performed                    | Results                                 | Pass/Fail |
-| ---------- | -------------------------------------------------------------- | --------------------------------- | --------------------------------------- | --------- |
-| **Navbar** |
-| Devon Rex  | When clicked, the page should scroll up to the top of the page | Clicked "Devon Rex" in the Navbar | Page scrolled up to the top of the page | Pass      |
+| Features                   | Expected Outcome                                                            | Test Performed                                  | Results                                                                                      | Pass/Fail |
+| -------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
+| **Home Screen**            |
+| Play Button                | Navigates to the game screen                                                | Clicked "Play" button                           | Successfully navigated to the game screen                                                    | Pass      |
+| Rules Button               | Navigates to the rules screen                                               | Clicked "Rules" button                          | Successfully navigated to the rules screen                                                   | Pass      |
+| **Rules Screen**           |
+| Close Button               | Returns to the home screen                                                  | Clicked "Close" button                          | Successfully navigated back to the home screen                                               | Pass      |
+| **Game Screen**            |
+| Color Buttons              | Plays corresponding sound and flashes button                                | Clicked on each color button                    | Each button played the correct sound and flashed                                             | Pass      |
+| Start Button               | Starts the game and begins the sequence                                     | Clicked "Start" button                          | Game sequence began and progressed as expected                                               | Pass      |
+| Reset Button               | Resets the game to its initial state                                        | Clicked "Reset" button                          | Game reset to initial state and cleared sequences                                            | Pass      |
+| Mute Button                | Toggles sound on/off for game sounds                                        | Clicked "Mute" button                           | Sound toggled on and off as expected                                                         | Pass      |
+| Sound Icons                | Display correct icon based on sound state                                   | Checked the sound icons                         | Icons correctly displayed based on sound state                                               | Pass      |
+| Status Screen              | Displays correct status messages                                            | Verified status messages during game events     | Status messages updated correctly                                                            | Pass      |
+| Level Screen               | Shows current level or status of the game                                   | Checked level display during gameplay           | Level displayed correctly and updated during play                                            | Pass      |
+| Navigation Between Screens | Smooth transition between screens                                           | Navigated between Home, Rules, and Game screens | Transitions between screens were smooth and correct                                          | Pass      |
+| Winning                    | Displays win message, flashes buttons, and updates screen accordingly       | Completed game with correct sequence            | Win message displayed, buttons flashed, game status updated, and reset options enabled       | Pass      |
+| Game Over                  | Displays game over message, flashes buttons, and updates screen accordingly | Made an incorrect move                          | Game over message displayed, buttons flashed, game status updated, and reset options enabled | Pass      |
 
 ### **Bugs**
 
-### 1. Sound not working
+### 1. Game Behaving Unexpectedly After Multiple Clicks in the Color Buttons
 
 **Description:**  
-after the first round, if a color button is clicked multiple times, the game goes to "game over" and resets automatically.
-
-<details>
-<summary> Click to see images </summary>
-
-![bug two](image path)
-![bug one](image path)
-
-</details>
+After the first round, if a player clicks a color button multiple times, the game ends as expected but also resets automatically without prompting the player to manually reset. This disrupts the game flow by not giving the player an opportunity to restart the game at their convenience.
 
 **Steps to Reproduce:**
 
-1. Deploy the project to a web server.
-2. Attempt to load the web page.
-3. Notice that the CSS styles and images do not load.
+1. Start a new game and complete the first round.
+2. During the subsequent rounds, repeatedly click any color button rapidly.
+3. Observe that the game ends correctly but resets automatically without prompting the player.
 
-**Expected Behavior:**  
-to be developed
+**Expected Behavior:**
+The game should end with the "game over" message if the player makes an incorrect move.
+The game should prompt the player to manually reset or provide an option to restart rather than resetting automatically.
 
-**Actual Behavior:**  
-to be developed
-**Cause:**  
-to be developed
+**Actual Behavior:**
+When multiple clicks are detected, the game ends correctly but immediately resets to the initial state without giving the player a chance to take any action or see the "game over" message for a reasonable time.
 
-**Solution:**  
-to be developed
-
-**Example:**
+**Solution:**
+Update the handleColorClick function to include a condition that prevents any action if the game is in the "game over" state. This way, multiple clicks after the game ends will not trigger unintended behavior.
 
 Before:
 
-```html
-<link rel="stylesheet" href="/assets/css/style.css" />
-<img src="/assets/images/cat-hero.webp" alt="yellow devon rex cat sitting" />
+```javascript
+function handleColorClick(color) {
+  if (!waitingForPlayer) return;
+
+  playerSequence.push(color);
+  playSound(color);
+  flashButton(color);
+
+  if (
+    playerSequence[playerSequence.length - 1] !==
+    computerSequence[playerSequence.length - 1]
+  ) {
+    gameOver();
+    return;
+  }
+
+  if (playerSequence.length === computerSequence.length) {
+    levelScreen.textContent = 'OK';
+    setTimeout(nextLevel, 1000);
+  }
+}
 ```
 
 After:
 
-```html
-<link rel="stylesheet" href="assets/css/style.css" />
-<img src="assets/images/cat-hero.webp" alt="yellow devon rex cat sitting" />
-```
-
 ```javascript
-// If the player clicks more buttons than the length of the computer sequence, ignore the click
-if (playerSequence.length >= computerSequence.length) return;
+function handleColorClick(color) {
+  if (!waitingForPlayer || gameOverState) return; // Add a check for the game over state
+
+  if (playerSequence.length >= computerSequence.length) return;
+
+  playerSequence.push(color);
+  playSound(color);
+  flashButton(color);
+
+  if (
+    playerSequence[playerSequence.length - 1] !==
+    computerSequence[playerSequence.length - 1]
+  ) {
+    gameOver();
+    return;
+  }
+
+  if (playerSequence.length === computerSequence.length) {
+    levelScreen.textContent = 'OK';
+    setTimeout(nextLevel, 1000);
+  }
+}
 ```
 
 ### **Test Final Review**
@@ -313,15 +356,15 @@ This website is developed using the following tools:
 
 **Favicon.io**: A tool that simplifies the creation of website favicons, allowing users to easily generate icons that represent their brand across different platforms and devices.
 
-**pixabay.com/**: to be developed
+**pixabay.com/**: A popular online resource for free high-quality sounds.
 
 Each of these tools plays a crucial role in the development, deployment, and maintenance of the website, contributing to its overall quality and user experience.
 
 ## Deployment
 
-This website is deployed using Netlify.
+*This website is deployed using Netlify.*
 
-### Deployment Steps
+### Steps
 
 1. **Log in to Netlify:** Navigate to the [Netlify website](https://www.netlify.com/) and log in to your account.
 
@@ -337,20 +380,49 @@ This website is deployed using Netlify.
 
 7. **Live Site:** After the deployment process is complete, Netlify will provide you with a unique URL for your live site. You can access your live site by visiting this URL.
 
-## How to Clone the Repository and Install Packages
+## How to Fork and Clone the Repository and Install Packages
 
-1. **Clone the Repository:**
+1. **Fork the Repository:**
+
+- Go to the GitHub repository.
+- Click the "Fork" button in the top-right corner of the page.
+- This will create a copy of the repository in your GitHub account.
+
+2. **Clone the Repository:**
 
    ```sh
    git clone https://github.com/yourusername/your-repository.git
    cd your-repository
    ```
 
-2. **Install Dependencies:**
-
+3. **Install Dependencies:**
    ```sh
    npm install
    ```
+4. **Run Sass Compiler:**
+   To compile your Sass files into CSS and watch for changes, run the following command:
+   ```sh
+   npm run sass-dev
+   ```
+
+**Where to Run the Commands:**
+
+- Open your terminal or command prompt.
+- Navigate to the directory where you want to clone the repository.
+- Paste and run each command in the terminal in the order provided above.
+
+**Explanation:**
+
+- _Forking the Repository:_ This step creates a copy of the repository under your GitHub account, allowing you to make changes without affecting the original repository.
+- _Cloning the Repository:_ This step downloads the project files from the GitHub repository to your local machine.
+- _Installing Dependencies:_ This command installs all the required packages listed in the package.json file.
+- _Running Sass Compiler:_ This command uses the sass package to compile the Sass files located in the assets/sass directory into a single CSS file in the assets/css directory and watches for any changes to recompile automatically.
+
+**Additional Notes:**
+
+- Make sure you have Node.js installed on your machine. If not, download and install it from nodejs.org.
+- The sass-dev script uses the sass package to compile Sass files. Ensure you are in the project directory when running this command.
+- The --no-source-map flag prevents the generation of source maps. If you need source maps for debugging, you can remove this flag.
 
 ## Credits
 
