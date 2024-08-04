@@ -200,7 +200,7 @@ The lighthouse score results can be found below.
 
 The WAVE accessibility evaluation tool results can be found below.
 
-![wave accessibility evaluation](img path)
+![wave accessibility evaluation](./assets/images/WAVE.webp)
 
 ### **Manual Testing**
 
