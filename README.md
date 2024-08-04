@@ -48,14 +48,14 @@ You can visit the live website [here!](website_link)
 <details>
 <summary> Open for desktop wireframe </summary>
 
-![balsamiq wireframe](./assets/images/balsamic-wireframe-desktop.webp)
+<img src="./assets/images/balsamic-wireframe-desktop.webp" alt="balsamiq wireframe" style="width: 100%; max-width: 500px;" />
 
 </details>
 
 <details>
 <summary> Open for mobile wireframe </summary>
 
-![balsamiq wireframe](./assets/images/balsamic-wireframe-mobile.webp)
+<img src="./assets/images/balsamic-wireframe-mobile.webp" alt="balsamiq wireframe" style="width: 100%; max-width: 600px;" />
 
 </details>
 
@@ -64,7 +64,7 @@ You can visit the live website [here!](website_link)
 <details>
 <summary> Open for desktop prototype </summary>
 
-![figma prototype](./assets/images/figma-prototype.webp)
+<img src="./assets/images/figma-prototype.webp" alt="figma prototype" style="width: 100%; max-width: 300px;" />
 
 </details>
 
