@@ -199,24 +199,24 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 
 The JavaScript code has been run through the [JS HInt](https://jshint.com/) validator. Results can be found below.
 
-<img src="./assets/images/jshint.webp" alt="js hint validation" style="width: 400px;" />
+<img src="./assets/images/jshint.webp" alt="js hint validation"/>
 
 #### **HTML Validation**
 
 The HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
 
-<img src="./assets/images/html-validation.webp" alt="w3c html validation" style="width: 400px;" />
+<img src="./assets/images/html-validation.webp" alt="w3c html validation" />
 
 #### **CSS Validation**
 
 The CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
-<img src="./assets/images/css-validation.webp" alt="w3c css validation" style="width: 400px;" />
+<img src="./assets/images/css-validation.webp" alt="w3c css validation" />
 
 #### **Google Lighthouse**
 
 The lighthouse score results can be found below.
 
-<img src="./assets/images/google-lighthouse.webp" alt="google lighthouse" style="width: 400px;" />
+<img src="./assets/images/google-lighthouse.webp" alt="google lighthouse" />
 
 #### **WAVE Accessibility Evaluation**
 
