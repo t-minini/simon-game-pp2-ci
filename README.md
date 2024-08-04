@@ -449,7 +449,7 @@ _This website is deployed using Netlify._
 
 No external code sources were used to develop this website.
 
-Classic Simon Game Image takes from [Amazon.com](https://www.amazon.com/Simon-1897-Electronic-Memory-Game/dp/B00E9YWJOS?th=1)
+Classic Simon Game Image taken from [Amazon.com](https://www.amazon.com/Simon-1897-Electronic-Memory-Game/dp/B00E9YWJOS?th=1)
 
 ## Acknowledgements
 
