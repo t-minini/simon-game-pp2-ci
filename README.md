@@ -375,7 +375,9 @@ This website is developed using the following tools:
 
 **Favicon.io**: A tool that simplifies the creation of website favicons, allowing users to easily generate icons that represent their brand across different platforms and devices.
 
-**pixabay.com/**: A popular online resource for free high-quality sounds.
+**Pixabay.com/**: A popular online resource for free high-quality sounds.
+
+**Mockuuups Studio:** A Figma plugin that simplifies the process of creating high-quality device mockups.
 
 Each of these tools plays a crucial role in the development, deployment, and maintenance of the website, contributing to its overall quality and user experience.
 
@@ -446,6 +448,8 @@ _This website is deployed using Netlify._
 ## Credits
 
 No external code sources were used to develop this website.
+
+Classic Simon Game Image takes from [Amazon.com](https://www.amazon.com/Simon-1897-Electronic-Memory-Game/dp/B00E9YWJOS?th=1)
 
 ## Acknowledgements
 
