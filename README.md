@@ -197,7 +197,7 @@ Responsiveness has been checked and adjusted in Chrome Dev Tools and the site ha
 
 #### **JSHint Validation**
 
-The JavaScript code has been run through the [JS HInt](https://jshint.com/) validator. Results can be found below.
+The JavaScript code has been run through the [JS Hint](https://jshint.com/) validator. Results can be found below.
 
 <img src="./assets/images/jshint.webp" alt="js hint validation"/>
 
@@ -357,6 +357,8 @@ This website is developed using the following tools:
 
 **Balsamiq**: A wireframing tool used to create low-fidelity mockups. Balsamiq helps in quickly visualizing the structure and layout of web pages before moving on to high-fidelity design.
 
+**JSHint:** A static code analysis tool used to detect errors and potential problems in JavaScript code. JSHint helps ensure code quality and adherence to best practices.
+
 **W3C Markup Validation Service**: A tool provided by the World Wide Web Consortium (W3C) to validate HTML and XHTML documents. This service checks for errors in the markup to ensure compliance with web standards.
 
 **W3C CSS Validation Service**: A tool provided by W3C to validate CSS code. It helps in identifying errors and potential issues in the stylesheet, ensuring it adheres to CSS standards.
@@ -375,7 +377,7 @@ This website is developed using the following tools:
 
 **Favicon.io**: A tool that simplifies the creation of website favicons, allowing users to easily generate icons that represent their brand across different platforms and devices.
 
-**Pixabay.com/**: A popular online resource for free high-quality sounds.
+**Pixabay.com**: A popular online resource for free high-quality sounds.
 
 **Mockuuups Studio:** A Figma plugin that simplifies the process of creating high-quality device mockups.
 
